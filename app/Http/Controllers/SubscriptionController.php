@@ -9,9 +9,13 @@ class SubscriptionController extends Controller
     public function list(Request $request) {
         $maxioRequest = $this->maxioRequest('GET', 'subscriptions.json', $request->all());
 
-        $response = json_decode($maxioRequest->getBody());
-        $code = $maxioRequest->getStatusCode();
-
-        return response()->json($response, $code);
+        if($maxioRequest['success']) {
+            $message = 'Subscription List retrieved successfully.';
+            $data = json_decode($maxioRequest['data']);
+            
+            return $this->sendResponse($data, $message);
+        } else {
+            return $this->sendError($maxioRequest['message'], $maxioRequest['code']);
+        }
     }
 }

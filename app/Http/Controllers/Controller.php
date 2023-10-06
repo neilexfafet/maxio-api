@@ -37,15 +37,52 @@ class Controller extends BaseController
                 $params => $body
             ]);
 
-            return $data;
+            return $this->formatRequest(true, $data);
         } catch(\Exception $e) {
-            return $e;
+            return $this->formatRequest(false, $e);
         } catch (\Guzzle\Http\Exception $e) {
-            return $e;
+            return $this->formatRequest(false, $e);
         } catch(\Guzzle\Http\Exception\BadResponseException $e) {
-            info('error');
-            info($e);
-            return $e;
+            return $this->formatRequest(false, $e);
+        } catch(\Guzzle\Http\Exception\ClientException $e) {
+            return $this->formatRequest(false, $e);
         }
+    }
+
+    protected function formatRequest($success, $result) {
+        if($success) {
+            return [
+                'success' => true,
+                'data' => $result->getBody(),
+            ];
+        } else {
+            return [
+                'success' => false,
+                'message' => $result->getResponse()->getBody()->getContents() ?? $result->getMessage(),
+                'code' => $result->getCode()
+            ];
+        }
+    }
+
+    public function sendResponse($result = [], $message = '', $code = 200) {
+        return response()->json([
+            'success' => true,
+            'data' => $result,
+            'message' => $message,
+        ], $code);
+    }
+
+    public function sendError($error = '', $code = 404) {
+        return response()->json([
+            'success' => false,
+            'message' => $error
+        ], $code);
+    }
+
+    public function sendSuccess($message = '') {
+        return response()->json([
+            'success' => true,
+            'message' => $message
+        ], 200);
     }
 }
