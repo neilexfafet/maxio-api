@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SubscriptionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,14 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
-Route::group(['prefix' => '/maxio'], function() {
-    Route::get('/test', function() {
-        return response()->json([
-            'message' => 'Hi!'
-        ], 200);
+Route::prefix('maxio')->group(function() {
+    Route::controller(SubscriptionController::class)->prefix('subscriptions')->group(function() {
+        Route::get('/', 'index');
+        Route::get('/{id}', 'find');
+        Route::post('/', 'store');
+        Route::post('/{id}', 'update');
     });
 });
