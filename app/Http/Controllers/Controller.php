@@ -10,21 +10,27 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
 
-    protected function maxioRequest($method = 'GET', $resource = '', $body = []) {
-        $baseUrl = config('maxio.base_url');
-        $username = config('maxio.key');
-        $password = config('maxio.password');
+    private $baseUrl;
+    private $username;
+    private $password;
 
+    public function __construct() {
+        $this->baseUrl = config('maxio.base_url');
+        $this->username = config('maxio.key');
+        $this->password = config('maxio.password');
+    }
+
+    protected function maxioRequest($method = 'GET', $resource = '', $body = []) {
         $client = new \GuzzleHttp\Client();
 
         $method = strtoupper($method);
 
-        $token = base64_encode($username.':'.$password);
+        $token = base64_encode($this->username.':'.$this->password);
 
         $params = $method == 'POST' ? 'form_params' : 'query';
 
         try {
-            $data = $client->request($method, $baseUrl.$resource, [
+            $data = $client->request($method, $this->baseUrl.$resource, [
                 'headers' => [
                     'Accept' => 'application/json',
                     'Authorization' => 'Basic '.$token
@@ -73,14 +79,14 @@ class Controller extends BaseController
         return response()->json([
             'success' => true,
             'data' => $result,
-            'message' => $message,
+            'message' => $this->str_or_json($message),
         ], $code);
     }
 
     public function sendError($error = '', $code = 404) {
         return response()->json([
             'success' => false,
-            'message' => $error
+            'message' => $this->str_or_json($error)
         ], $code);
     }
 
@@ -89,5 +95,12 @@ class Controller extends BaseController
             'success' => true,
             'message' => $message
         ], 200);
+    }
+
+    public function str_or_json($str) {
+        if(json_decode($str)) {
+            return json_decode($str);
+        }
+        return $str;
     }
 }

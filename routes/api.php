@@ -22,6 +22,8 @@ use App\Http\Controllers\SubscriptionController;
 Route::prefix('maxio')->group(function() {
     Route::controller(SubscriptionController::class)->prefix('subscriptions')->group(function() {
         Route::get('/', 'index');
+        Route::get('/{id}', 'find');
         Route::post('/', 'store');
+        Route::post('/{id}', 'update');
     });
 });
