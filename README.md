@@ -6,7 +6,7 @@ trip ko lang gumawa, walang task sa fligno ehh
 
 ## API Documentation
 
-[Documentation Link](https://{YOUR_APP_URL}/docs)
+[http://127.0.0.1:8000/docs or http://{THIS_APP_URL}/docs](https://127.0.0.1:8000/docs)
 
 
 ## Environment Variables
