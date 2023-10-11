@@ -6,16 +6,31 @@ use Illuminate\Http\Request;
 
 class SubscriptionController extends Controller
 {
-    public function list(Request $request) {
-        $maxioRequest = $this->maxioRequest('GET', 'subscriptions.json', $request->all());
+    private $uri;
 
-        if($maxioRequest['success']) {
-            $message = 'Subscription List retrieved successfully.';
-            $data = json_decode($maxioRequest['data']);
-            
-            return $this->sendResponse($data, $message);
-        } else {
-            return $this->sendError($maxioRequest['message'], $maxioRequest['code']);
-        }
+    public function __construct() {
+        $this->uri = 'subscriptions.json';
+    }
+
+    protected function setRequest($method, $request) {
+        $req = $this->maxioRequest($method, $this->uri, $request);
+
+        return $req;
+    }
+
+    public function index(Request $request) {
+        $maxioRequest = $this->setRequest('GET', $request->all());
+
+        $message = 'Subscription List retrieved successfully.';
+
+        return $this->response($maxioRequest, $message);
+    }
+
+    public function store(Request $request) {
+        $maxioRequest = $this->setRequest('POST', $request->all());
+
+        $message = 'Subscription List created successfully.';
+
+        return $this->response($maxioRequest, $message);
     }
 }

@@ -20,7 +20,8 @@ use App\Http\Controllers\SubscriptionController;
 // });
 
 Route::prefix('maxio')->group(function() {
-    Route::controller(SubscriptionController::class)->prefix('subscription')->group(function() {
-        Route::get('/list', 'list');
+    Route::controller(SubscriptionController::class)->prefix('subscriptions')->group(function() {
+        Route::get('/', 'index');
+        Route::post('/', 'store');
     });
 });

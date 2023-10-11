@@ -10,26 +10,21 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
 
-    private $baseUrl;
-    private $username;
-    private $password;
-
-    public function __construct() {
-        $this->baseUrl = config('maxio.base_url');
-        $this->username = config('maxio.key');
-        $this->password = config('maxio.password');
-    }
-
     protected function maxioRequest($method = 'GET', $resource = '', $body = []) {
+        $baseUrl = config('maxio.base_url');
+        $username = config('maxio.key');
+        $password = config('maxio.password');
+
         $client = new \GuzzleHttp\Client();
+
         $method = strtoupper($method);
 
-        $token = base64_encode($this->username.':'.$this->password);
+        $token = base64_encode($username.':'.$password);
 
-        $params = $method == 'POST' ? 'body' : 'query';
+        $params = $method == 'POST' ? 'form_params' : 'query';
 
         try {
-            $data = $client->request($method, $this->baseUrl.$resource, [
+            $data = $client->request($method, $baseUrl.$resource, [
                 'headers' => [
                     'Accept' => 'application/json',
                     'Authorization' => 'Basic '.$token
@@ -61,6 +56,16 @@ class Controller extends BaseController
                 'message' => $result->getResponse()->getBody()->getContents() ?? $result->getMessage(),
                 'code' => $result->getCode()
             ];
+        }
+    }
+
+    public function response($result = [], $message = '') {
+        if($result['success']) {
+            $data = json_decode($result['data']);
+            
+            return $this->sendResponse($data, $message);
+        } else {
+            return $this->sendError($result['message'], $result['code']);
         }
     }
 
