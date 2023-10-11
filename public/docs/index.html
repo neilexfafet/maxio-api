@@ -1,0 +1,3408 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Laravel Documentation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/obsidian.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jets/0.14.1/jets.min.js"></script>
+
+    <style id="language-style">
+        /* starts out as display none and is replaced with js later  */
+                    body .content .bash-example code { display: none; }
+                    body .content .javascript-example code { display: none; }
+            </style>
+
+    <script>
+        var tryItOutBaseUrl = "http://maxio-api.local";
+        var useCsrf = Boolean();
+        var csrfUrl = "/sanctum/csrf-cookie";
+    </script>
+    <script src="../docs/js/tryitout-4.25.0.js"></script>
+
+    <script src="../docs/js/theme-default-4.25.0.js"></script>
+
+</head>
+
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;]">
+
+<a href="#" id="nav-button">
+    <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image"/>
+    </span>
+</a>
+<div class="tocify-wrapper">
+    
+            <div class="lang-selector">
+                                            <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                            <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                    </div>
+    
+    <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+
+    <div id="toc">
+                    <ul id="tocify-header-introduction" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="introduction">
+                    <a href="#introduction">Introduction</a>
+                </li>
+                            </ul>
+                    <ul id="tocify-header-authenticating-requests" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="authenticating-requests">
+                    <a href="#authenticating-requests">Authenticating requests</a>
+                </li>
+                            </ul>
+                    <ul id="tocify-header-subscriptions" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="subscriptions">
+                    <a href="#subscriptions">Subscriptions</a>
+                </li>
+                                    <ul id="tocify-subheader-subscriptions" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="subscriptions-GETapi-maxio-subscriptions">
+                                <a href="#subscriptions-GETapi-maxio-subscriptions">Display List of Subscriptions</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="subscriptions-GETapi-maxio-subscriptions--id-">
+                                <a href="#subscriptions-GETapi-maxio-subscriptions--id-">Display details of a Subscription</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="subscriptions-POSTapi-maxio-subscriptions">
+                                <a href="#subscriptions-POSTapi-maxio-subscriptions">Create or Store Subscription</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="subscriptions-POSTapi-maxio-subscriptions--id-">
+                                <a href="#subscriptions-POSTapi-maxio-subscriptions--id-">Update Subscription</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+            </div>
+
+    <ul class="toc-footer" id="toc-footer">
+                    <li style="padding-bottom: 5px;"><a href="../docs/collection.json">View Postman collection</a></li>
+                            <li style="padding-bottom: 5px;"><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+    </ul>
+
+    <ul class="toc-footer" id="last-updated">
+        <li>Last updated: October 11, 2023</li>
+    </ul>
+</div>
+
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1 id="introduction">Introduction</h1>
+<aside>
+    <strong>Base URL</strong>: <code>http://maxio-api.local</code>
+</aside>
+<p>This documentation aims to provide all the information you need to work with our API.</p>
+<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
+You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+
+        <h1 id="authenticating-requests">Authenticating requests</h1>
+<p>This API is not authenticated.</p>
+
+        <h1 id="subscriptions">Subscriptions</h1>
+
+    
+
+                                <h2 id="subscriptions-GETapi-maxio-subscriptions">Display List of Subscriptions</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-maxio-subscriptions">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://maxio-api.local/api/maxio/subscriptions" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://maxio-api.local/api/maxio/subscriptions"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-maxio-subscriptions">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 59
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;data&quot;: [
+        {
+            &quot;subscription&quot;: {
+                &quot;id&quot;: 69009117,
+                &quot;state&quot;: &quot;active&quot;,
+                &quot;trial_started_at&quot;: null,
+                &quot;trial_ended_at&quot;: null,
+                &quot;activated_at&quot;: &quot;2023-10-11T16:57:39+10:00&quot;,
+                &quot;created_at&quot;: &quot;2023-10-11T16:57:38+10:00&quot;,
+                &quot;updated_at&quot;: &quot;2023-10-11T16:57:40+10:00&quot;,
+                &quot;expires_at&quot;: null,
+                &quot;balance_in_cents&quot;: 0,
+                &quot;current_period_ends_at&quot;: &quot;2023-11-11T16:57:38+10:00&quot;,
+                &quot;next_assessment_at&quot;: &quot;2023-11-11T16:57:38+10:00&quot;,
+                &quot;canceled_at&quot;: null,
+                &quot;cancellation_message&quot;: null,
+                &quot;next_product_id&quot;: null,
+                &quot;next_product_handle&quot;: null,
+                &quot;cancel_at_end_of_period&quot;: false,
+                &quot;payment_collection_method&quot;: &quot;automatic&quot;,
+                &quot;snap_day&quot;: null,
+                &quot;cancellation_method&quot;: null,
+                &quot;current_period_started_at&quot;: &quot;2023-10-11T16:57:38+10:00&quot;,
+                &quot;previous_state&quot;: &quot;active&quot;,
+                &quot;signup_payment_id&quot;: 937469993,
+                &quot;signup_revenue&quot;: &quot;0.00&quot;,
+                &quot;delayed_cancel_at&quot;: null,
+                &quot;coupon_code&quot;: null,
+                &quot;total_revenue_in_cents&quot;: 0,
+                &quot;product_price_in_cents&quot;: 0,
+                &quot;product_version_number&quot;: 1,
+                &quot;payment_type&quot;: &quot;credit_card&quot;,
+                &quot;referral_code&quot;: null,
+                &quot;coupon_use_count&quot;: null,
+                &quot;coupon_uses_allowed&quot;: null,
+                &quot;reason_code&quot;: null,
+                &quot;automatically_resume_at&quot;: null,
+                &quot;coupon_codes&quot;: [],
+                &quot;offer_id&quot;: null,
+                &quot;payer_id&quot;: null,
+                &quot;receives_invoice_emails&quot;: null,
+                &quot;product_price_point_id&quot;: 2487295,
+                &quot;next_product_price_point_id&quot;: null,
+                &quot;credit_balance_in_cents&quot;: 0,
+                &quot;prepayment_balance_in_cents&quot;: 0,
+                &quot;net_terms&quot;: null,
+                &quot;stored_credential_transaction_id&quot;: null,
+                &quot;locale&quot;: null,
+                &quot;reference&quot;: null,
+                &quot;currency&quot;: &quot;USD&quot;,
+                &quot;on_hold_at&quot;: null,
+                &quot;scheduled_cancellation_at&quot;: null,
+                &quot;product_price_point_type&quot;: &quot;default&quot;,
+                &quot;dunning_communication_delay_enabled&quot;: false,
+                &quot;dunning_communication_delay_time_zone&quot;: null,
+                &quot;customer&quot;: {
+                    &quot;id&quot;: 71650118,
+                    &quot;first_name&quot;: &quot;Test Neil&quot;,
+                    &quot;last_name&quot;: &quot;Laravel API&quot;,
+                    &quot;organization&quot;: &quot;Acme&quot;,
+                    &quot;email&quot;: &quot;testneillaravelapi@example.com&quot;,
+                    &quot;created_at&quot;: &quot;2023-10-11T16:57:38+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2023-10-11T16:57:40+10:00&quot;,
+                    &quot;reference&quot;: &quot;ANB&quot;,
+                    &quot;address&quot;: &quot;123 Mass Ave.&quot;,
+                    &quot;address_2&quot;: null,
+                    &quot;city&quot;: &quot;Boston&quot;,
+                    &quot;state&quot;: &quot;MA&quot;,
+                    &quot;state_name&quot;: &quot;Massachusetts&quot;,
+                    &quot;zip&quot;: &quot;02120&quot;,
+                    &quot;country&quot;: &quot;US&quot;,
+                    &quot;country_name&quot;: &quot;United States&quot;,
+                    &quot;phone&quot;: &quot;(617) 111 - 0000&quot;,
+                    &quot;portal_invite_last_sent_at&quot;: &quot;2023-10-11T16:57:40+10:00&quot;,
+                    &quot;portal_invite_last_accepted_at&quot;: null,
+                    &quot;verified&quot;: false,
+                    &quot;portal_customer_created_at&quot;: &quot;2023-10-11T16:57:40+10:00&quot;,
+                    &quot;vat_number&quot;: null,
+                    &quot;cc_emails&quot;: null,
+                    &quot;tax_exempt&quot;: false,
+                    &quot;parent_id&quot;: null,
+                    &quot;locale&quot;: null
+                },
+                &quot;product&quot;: {
+                    &quot;id&quot;: 6565977,
+                    &quot;name&quot;: &quot;Engage&quot;,
+                    &quot;handle&quot;: &quot;engage&quot;,
+                    &quot;description&quot;: &quot;Base Product for Engage&quot;,
+                    &quot;accounting_code&quot;: &quot;&quot;,
+                    &quot;request_credit_card&quot;: true,
+                    &quot;expiration_interval&quot;: null,
+                    &quot;expiration_interval_unit&quot;: &quot;never&quot;,
+                    &quot;created_at&quot;: &quot;2023-10-02T18:33:44+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2023-10-03T11:47:18+10:00&quot;,
+                    &quot;price_in_cents&quot;: 0,
+                    &quot;interval&quot;: 1,
+                    &quot;interval_unit&quot;: &quot;month&quot;,
+                    &quot;initial_charge_in_cents&quot;: null,
+                    &quot;trial_price_in_cents&quot;: null,
+                    &quot;trial_interval&quot;: null,
+                    &quot;trial_interval_unit&quot;: &quot;month&quot;,
+                    &quot;archived_at&quot;: null,
+                    &quot;require_credit_card&quot;: true,
+                    &quot;return_params&quot;: &quot;&quot;,
+                    &quot;taxable&quot;: false,
+                    &quot;update_return_url&quot;: &quot;&quot;,
+                    &quot;tax_code&quot;: &quot;&quot;,
+                    &quot;initial_charge_after_trial&quot;: false,
+                    &quot;version_number&quot;: 1,
+                    &quot;update_return_params&quot;: &quot;&quot;,
+                    &quot;default_product_price_point_id&quot;: 2487295,
+                    &quot;request_billing_address&quot;: false,
+                    &quot;require_billing_address&quot;: false,
+                    &quot;require_shipping_address&quot;: false,
+                    &quot;use_site_exchange_rate&quot;: true,
+                    &quot;item_category&quot;: &quot;Consumer Software&quot;,
+                    &quot;product_price_point_id&quot;: 2487295,
+                    &quot;product_price_point_name&quot;: &quot;Original&quot;,
+                    &quot;product_price_point_handle&quot;: &quot;uuid:b2ee4940-43bc-013c-07b3-0a06e71b1fdb&quot;,
+                    &quot;product_family&quot;: {
+                        &quot;id&quot;: 2589039,
+                        &quot;name&quot;: &quot;Engage Product Family&quot;,
+                        &quot;description&quot;: &quot;Enage Products&quot;,
+                        &quot;handle&quot;: &quot;engage&quot;,
+                        &quot;accounting_code&quot;: null,
+                        &quot;created_at&quot;: &quot;2023-10-02T18:22:58+10:00&quot;,
+                        &quot;updated_at&quot;: &quot;2023-10-02T18:22:58+10:00&quot;
+                    },
+                    &quot;public_signup_pages&quot;: [
+                        {
+                            &quot;id&quot;: 490919,
+                            &quot;return_url&quot;: null,
+                            &quot;return_params&quot;: &quot;&quot;,
+                            &quot;url&quot;: &quot;https://changegps.chargifypay.com/subscribe/9wvy9pfzcw3n/engage&quot;,
+                            &quot;enabled&quot;: true,
+                            &quot;nickname&quot;: null,
+                            &quot;currency&quot;: &quot;USD&quot;
+                        }
+                    ]
+                },
+                &quot;credit_card&quot;: {
+                    &quot;id&quot;: 54253011,
+                    &quot;first_name&quot;: &quot;Joe&quot;,
+                    &quot;last_name&quot;: &quot;Smith&quot;,
+                    &quot;masked_card_number&quot;: &quot;XXXX-XXXX-XXXX-8431&quot;,
+                    &quot;card_type&quot;: &quot;american_express&quot;,
+                    &quot;expiration_month&quot;: 1,
+                    &quot;expiration_year&quot;: 2029,
+                    &quot;customer_id&quot;: 71650118,
+                    &quot;current_vault&quot;: &quot;bogus&quot;,
+                    &quot;vault_token&quot;: &quot;1&quot;,
+                    &quot;billing_address&quot;: &quot;123 Mass Ave.&quot;,
+                    &quot;billing_city&quot;: &quot;Boston&quot;,
+                    &quot;billing_state&quot;: &quot;MA&quot;,
+                    &quot;billing_zip&quot;: &quot;02120&quot;,
+                    &quot;billing_country&quot;: &quot;US&quot;,
+                    &quot;customer_vault_token&quot;: null,
+                    &quot;billing_address_2&quot;: null,
+                    &quot;payment_type&quot;: &quot;credit_card&quot;,
+                    &quot;disabled&quot;: false,
+                    &quot;site_gateway_setting_id&quot;: null,
+                    &quot;gateway_handle&quot;: null
+                },
+                &quot;group&quot;: null
+            }
+        },
+        {
+            &quot;subscription&quot;: {
+                &quot;id&quot;: 69008983,
+                &quot;state&quot;: &quot;active&quot;,
+                &quot;trial_started_at&quot;: null,
+                &quot;trial_ended_at&quot;: null,
+                &quot;activated_at&quot;: &quot;2023-10-11T16:48:19+10:00&quot;,
+                &quot;created_at&quot;: &quot;2023-10-11T16:48:18+10:00&quot;,
+                &quot;updated_at&quot;: &quot;2023-10-11T18:32:22+10:00&quot;,
+                &quot;expires_at&quot;: null,
+                &quot;balance_in_cents&quot;: 0,
+                &quot;current_period_ends_at&quot;: &quot;2024-08-07T01:34:00+10:00&quot;,
+                &quot;next_assessment_at&quot;: &quot;2024-08-07T01:34:00+10:00&quot;,
+                &quot;canceled_at&quot;: null,
+                &quot;cancellation_message&quot;: null,
+                &quot;next_product_id&quot;: null,
+                &quot;next_product_handle&quot;: null,
+                &quot;cancel_at_end_of_period&quot;: false,
+                &quot;payment_collection_method&quot;: &quot;automatic&quot;,
+                &quot;snap_day&quot;: null,
+                &quot;cancellation_method&quot;: null,
+                &quot;current_period_started_at&quot;: &quot;2023-10-11T16:48:18+10:00&quot;,
+                &quot;previous_state&quot;: &quot;active&quot;,
+                &quot;signup_payment_id&quot;: 937469577,
+                &quot;signup_revenue&quot;: &quot;0.00&quot;,
+                &quot;delayed_cancel_at&quot;: null,
+                &quot;coupon_code&quot;: null,
+                &quot;total_revenue_in_cents&quot;: 0,
+                &quot;product_price_in_cents&quot;: 0,
+                &quot;product_version_number&quot;: 1,
+                &quot;payment_type&quot;: &quot;credit_card&quot;,
+                &quot;referral_code&quot;: null,
+                &quot;coupon_use_count&quot;: null,
+                &quot;coupon_uses_allowed&quot;: null,
+                &quot;reason_code&quot;: null,
+                &quot;automatically_resume_at&quot;: null,
+                &quot;coupon_codes&quot;: [],
+                &quot;offer_id&quot;: null,
+                &quot;payer_id&quot;: null,
+                &quot;receives_invoice_emails&quot;: null,
+                &quot;product_price_point_id&quot;: 2487295,
+                &quot;next_product_price_point_id&quot;: null,
+                &quot;credit_balance_in_cents&quot;: 0,
+                &quot;prepayment_balance_in_cents&quot;: 0,
+                &quot;net_terms&quot;: null,
+                &quot;stored_credential_transaction_id&quot;: null,
+                &quot;locale&quot;: null,
+                &quot;reference&quot;: null,
+                &quot;currency&quot;: &quot;USD&quot;,
+                &quot;on_hold_at&quot;: null,
+                &quot;scheduled_cancellation_at&quot;: null,
+                &quot;product_price_point_type&quot;: &quot;default&quot;,
+                &quot;dunning_communication_delay_enabled&quot;: false,
+                &quot;dunning_communication_delay_time_zone&quot;: null,
+                &quot;customer&quot;: {
+                    &quot;id&quot;: 71649976,
+                    &quot;first_name&quot;: &quot;Joe&quot;,
+                    &quot;last_name&quot;: &quot;Blow&quot;,
+                    &quot;organization&quot;: &quot;Acme&quot;,
+                    &quot;email&quot;: &quot;joe@example.com&quot;,
+                    &quot;created_at&quot;: &quot;2023-10-11T16:48:18+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2023-10-11T16:48:20+10:00&quot;,
+                    &quot;reference&quot;: &quot;XYZ&quot;,
+                    &quot;address&quot;: &quot;123 Mass Ave.&quot;,
+                    &quot;address_2&quot;: null,
+                    &quot;city&quot;: &quot;Boston&quot;,
+                    &quot;state&quot;: &quot;MA&quot;,
+                    &quot;state_name&quot;: &quot;Massachusetts&quot;,
+                    &quot;zip&quot;: &quot;02120&quot;,
+                    &quot;country&quot;: &quot;US&quot;,
+                    &quot;country_name&quot;: &quot;United States&quot;,
+                    &quot;phone&quot;: &quot;(617) 111 - 0000&quot;,
+                    &quot;portal_invite_last_sent_at&quot;: &quot;2023-10-11T16:48:20+10:00&quot;,
+                    &quot;portal_invite_last_accepted_at&quot;: null,
+                    &quot;verified&quot;: false,
+                    &quot;portal_customer_created_at&quot;: &quot;2023-10-11T16:48:20+10:00&quot;,
+                    &quot;vat_number&quot;: null,
+                    &quot;cc_emails&quot;: null,
+                    &quot;tax_exempt&quot;: false,
+                    &quot;parent_id&quot;: null,
+                    &quot;locale&quot;: null
+                },
+                &quot;product&quot;: {
+                    &quot;id&quot;: 6565977,
+                    &quot;name&quot;: &quot;Engage&quot;,
+                    &quot;handle&quot;: &quot;engage&quot;,
+                    &quot;description&quot;: &quot;Base Product for Engage&quot;,
+                    &quot;accounting_code&quot;: &quot;&quot;,
+                    &quot;request_credit_card&quot;: true,
+                    &quot;expiration_interval&quot;: null,
+                    &quot;expiration_interval_unit&quot;: &quot;never&quot;,
+                    &quot;created_at&quot;: &quot;2023-10-02T18:33:44+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2023-10-03T11:47:18+10:00&quot;,
+                    &quot;price_in_cents&quot;: 0,
+                    &quot;interval&quot;: 1,
+                    &quot;interval_unit&quot;: &quot;month&quot;,
+                    &quot;initial_charge_in_cents&quot;: null,
+                    &quot;trial_price_in_cents&quot;: null,
+                    &quot;trial_interval&quot;: null,
+                    &quot;trial_interval_unit&quot;: &quot;month&quot;,
+                    &quot;archived_at&quot;: null,
+                    &quot;require_credit_card&quot;: true,
+                    &quot;return_params&quot;: &quot;&quot;,
+                    &quot;taxable&quot;: false,
+                    &quot;update_return_url&quot;: &quot;&quot;,
+                    &quot;tax_code&quot;: &quot;&quot;,
+                    &quot;initial_charge_after_trial&quot;: false,
+                    &quot;version_number&quot;: 1,
+                    &quot;update_return_params&quot;: &quot;&quot;,
+                    &quot;default_product_price_point_id&quot;: 2487295,
+                    &quot;request_billing_address&quot;: false,
+                    &quot;require_billing_address&quot;: false,
+                    &quot;require_shipping_address&quot;: false,
+                    &quot;use_site_exchange_rate&quot;: true,
+                    &quot;item_category&quot;: &quot;Consumer Software&quot;,
+                    &quot;product_price_point_id&quot;: 2487295,
+                    &quot;product_price_point_name&quot;: &quot;Original&quot;,
+                    &quot;product_price_point_handle&quot;: &quot;uuid:b2ee4940-43bc-013c-07b3-0a06e71b1fdb&quot;,
+                    &quot;product_family&quot;: {
+                        &quot;id&quot;: 2589039,
+                        &quot;name&quot;: &quot;Engage Product Family&quot;,
+                        &quot;description&quot;: &quot;Enage Products&quot;,
+                        &quot;handle&quot;: &quot;engage&quot;,
+                        &quot;accounting_code&quot;: null,
+                        &quot;created_at&quot;: &quot;2023-10-02T18:22:58+10:00&quot;,
+                        &quot;updated_at&quot;: &quot;2023-10-02T18:22:58+10:00&quot;
+                    },
+                    &quot;public_signup_pages&quot;: [
+                        {
+                            &quot;id&quot;: 490919,
+                            &quot;return_url&quot;: null,
+                            &quot;return_params&quot;: &quot;&quot;,
+                            &quot;url&quot;: &quot;https://changegps.chargifypay.com/subscribe/9wvy9pfzcw3n/engage&quot;,
+                            &quot;enabled&quot;: true,
+                            &quot;nickname&quot;: null,
+                            &quot;currency&quot;: &quot;USD&quot;
+                        }
+                    ]
+                },
+                &quot;credit_card&quot;: {
+                    &quot;id&quot;: 54252939,
+                    &quot;first_name&quot;: &quot;Joe&quot;,
+                    &quot;last_name&quot;: &quot;Smith&quot;,
+                    &quot;masked_card_number&quot;: &quot;XXXX-XXXX-XXXX-8431&quot;,
+                    &quot;card_type&quot;: &quot;american_express&quot;,
+                    &quot;expiration_month&quot;: 10,
+                    &quot;expiration_year&quot;: 2030,
+                    &quot;customer_id&quot;: 71649976,
+                    &quot;current_vault&quot;: &quot;bogus&quot;,
+                    &quot;vault_token&quot;: &quot;1&quot;,
+                    &quot;billing_address&quot;: &quot;123 Mass Ave.&quot;,
+                    &quot;billing_city&quot;: &quot;Boston&quot;,
+                    &quot;billing_state&quot;: &quot;MA&quot;,
+                    &quot;billing_zip&quot;: &quot;02120&quot;,
+                    &quot;billing_country&quot;: &quot;US&quot;,
+                    &quot;customer_vault_token&quot;: null,
+                    &quot;billing_address_2&quot;: null,
+                    &quot;payment_type&quot;: &quot;credit_card&quot;,
+                    &quot;disabled&quot;: false,
+                    &quot;site_gateway_setting_id&quot;: null,
+                    &quot;gateway_handle&quot;: null
+                },
+                &quot;group&quot;: null
+            }
+        },
+        {
+            &quot;subscription&quot;: {
+                &quot;id&quot;: 68878987,
+                &quot;state&quot;: &quot;active&quot;,
+                &quot;trial_started_at&quot;: null,
+                &quot;trial_ended_at&quot;: null,
+                &quot;activated_at&quot;: &quot;2023-10-05T14:45:52+10:00&quot;,
+                &quot;created_at&quot;: &quot;2023-10-05T14:45:51+10:00&quot;,
+                &quot;updated_at&quot;: &quot;2023-10-05T14:45:52+10:00&quot;,
+                &quot;expires_at&quot;: &quot;2024-10-05T14:45:51+10:00&quot;,
+                &quot;balance_in_cents&quot;: 0,
+                &quot;current_period_ends_at&quot;: &quot;2024-10-05T14:45:51+10:00&quot;,
+                &quot;next_assessment_at&quot;: &quot;2024-10-05T14:45:51+10:00&quot;,
+                &quot;canceled_at&quot;: null,
+                &quot;cancellation_message&quot;: null,
+                &quot;next_product_id&quot;: null,
+                &quot;next_product_handle&quot;: null,
+                &quot;cancel_at_end_of_period&quot;: null,
+                &quot;payment_collection_method&quot;: &quot;automatic&quot;,
+                &quot;snap_day&quot;: null,
+                &quot;cancellation_method&quot;: null,
+                &quot;current_period_started_at&quot;: &quot;2023-10-05T14:45:51+10:00&quot;,
+                &quot;previous_state&quot;: &quot;active&quot;,
+                &quot;signup_payment_id&quot;: 934380809,
+                &quot;signup_revenue&quot;: &quot;784.44&quot;,
+                &quot;delayed_cancel_at&quot;: null,
+                &quot;coupon_code&quot;: null,
+                &quot;total_revenue_in_cents&quot;: 78444,
+                &quot;product_price_in_cents&quot;: 77893,
+                &quot;product_version_number&quot;: 1,
+                &quot;payment_type&quot;: &quot;credit_card&quot;,
+                &quot;referral_code&quot;: null,
+                &quot;coupon_use_count&quot;: null,
+                &quot;coupon_uses_allowed&quot;: null,
+                &quot;reason_code&quot;: null,
+                &quot;automatically_resume_at&quot;: null,
+                &quot;coupon_codes&quot;: [],
+                &quot;offer_id&quot;: null,
+                &quot;payer_id&quot;: null,
+                &quot;receives_invoice_emails&quot;: null,
+                &quot;product_price_point_id&quot;: 2481500,
+                &quot;next_product_price_point_id&quot;: null,
+                &quot;credit_balance_in_cents&quot;: 0,
+                &quot;prepayment_balance_in_cents&quot;: 0,
+                &quot;net_terms&quot;: null,
+                &quot;stored_credential_transaction_id&quot;: null,
+                &quot;locale&quot;: null,
+                &quot;reference&quot;: null,
+                &quot;currency&quot;: &quot;AUD&quot;,
+                &quot;on_hold_at&quot;: null,
+                &quot;scheduled_cancellation_at&quot;: null,
+                &quot;product_price_point_type&quot;: &quot;default&quot;,
+                &quot;dunning_communication_delay_enabled&quot;: false,
+                &quot;dunning_communication_delay_time_zone&quot;: null,
+                &quot;customer&quot;: {
+                    &quot;id&quot;: 71524515,
+                    &quot;first_name&quot;: &quot;Neil&quot;,
+                    &quot;last_name&quot;: &quot;Britos&quot;,
+                    &quot;organization&quot;: &quot;Test Company Neil&quot;,
+                    &quot;email&quot;: &quot;testcompany@email.com&quot;,
+                    &quot;created_at&quot;: &quot;2023-10-05T14:44:16+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2023-10-05T14:45:52+10:00&quot;,
+                    &quot;reference&quot;: null,
+                    &quot;address&quot;: null,
+                    &quot;address_2&quot;: null,
+                    &quot;city&quot;: null,
+                    &quot;state&quot;: null,
+                    &quot;state_name&quot;: null,
+                    &quot;zip&quot;: null,
+                    &quot;country&quot;: null,
+                    &quot;country_name&quot;: null,
+                    &quot;phone&quot;: &quot;09090909090&quot;,
+                    &quot;portal_invite_last_sent_at&quot;: &quot;2023-10-05T14:45:52+10:00&quot;,
+                    &quot;portal_invite_last_accepted_at&quot;: null,
+                    &quot;verified&quot;: false,
+                    &quot;portal_customer_created_at&quot;: &quot;2023-10-05T14:45:52+10:00&quot;,
+                    &quot;vat_number&quot;: null,
+                    &quot;cc_emails&quot;: null,
+                    &quot;tax_exempt&quot;: false,
+                    &quot;parent_id&quot;: null,
+                    &quot;locale&quot;: null
+                },
+                &quot;product&quot;: {
+                    &quot;id&quot;: 6563729,
+                    &quot;name&quot;: &quot;Protect 10&quot;,
+                    &quot;handle&quot;: &quot;protect-10&quot;,
+                    &quot;description&quot;: &quot;&quot;,
+                    &quot;accounting_code&quot;: &quot;&quot;,
+                    &quot;request_credit_card&quot;: true,
+                    &quot;expiration_interval&quot;: 12,
+                    &quot;expiration_interval_unit&quot;: &quot;month&quot;,
+                    &quot;created_at&quot;: &quot;2023-09-27T14:29:34+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2023-09-27T15:16:13+10:00&quot;,
+                    &quot;price_in_cents&quot;: 77893,
+                    &quot;interval&quot;: 12,
+                    &quot;interval_unit&quot;: &quot;month&quot;,
+                    &quot;initial_charge_in_cents&quot;: null,
+                    &quot;trial_price_in_cents&quot;: null,
+                    &quot;trial_interval&quot;: null,
+                    &quot;trial_interval_unit&quot;: &quot;month&quot;,
+                    &quot;archived_at&quot;: null,
+                    &quot;require_credit_card&quot;: true,
+                    &quot;return_params&quot;: &quot;&quot;,
+                    &quot;taxable&quot;: false,
+                    &quot;update_return_url&quot;: &quot;&quot;,
+                    &quot;tax_code&quot;: &quot;&quot;,
+                    &quot;initial_charge_after_trial&quot;: false,
+                    &quot;version_number&quot;: 1,
+                    &quot;update_return_params&quot;: &quot;&quot;,
+                    &quot;default_product_price_point_id&quot;: 2481500,
+                    &quot;request_billing_address&quot;: false,
+                    &quot;require_billing_address&quot;: false,
+                    &quot;require_shipping_address&quot;: false,
+                    &quot;use_site_exchange_rate&quot;: true,
+                    &quot;item_category&quot;: null,
+                    &quot;product_price_point_id&quot;: 2481500,
+                    &quot;product_price_point_name&quot;: &quot;Original&quot;,
+                    &quot;product_price_point_handle&quot;: &quot;uuid:e67559c0-3f22-013c-92ff-06de0fa030d9&quot;,
+                    &quot;product_family&quot;: {
+                        &quot;id&quot;: 2588066,
+                        &quot;name&quot;: &quot;Protect&quot;,
+                        &quot;description&quot;: &quot;&quot;,
+                        &quot;handle&quot;: &quot;protect&quot;,
+                        &quot;accounting_code&quot;: null,
+                        &quot;created_at&quot;: &quot;2023-09-27T10:59:19+10:00&quot;,
+                        &quot;updated_at&quot;: &quot;2023-09-27T10:59:19+10:00&quot;
+                    },
+                    &quot;public_signup_pages&quot;: [
+                        {
+                            &quot;id&quot;: 490710,
+                            &quot;return_url&quot;: null,
+                            &quot;return_params&quot;: &quot;&quot;,
+                            &quot;url&quot;: &quot;https://changegps.chargifypay.com/subscribe/4rzkckwtm7z8/protect-10&quot;,
+                            &quot;enabled&quot;: true,
+                            &quot;nickname&quot;: null,
+                            &quot;currency&quot;: &quot;USD&quot;
+                        }
+                    ]
+                },
+                &quot;credit_card&quot;: {
+                    &quot;id&quot;: 54156812,
+                    &quot;first_name&quot;: &quot;Test&quot;,
+                    &quot;last_name&quot;: &quot;Test&quot;,
+                    &quot;masked_card_number&quot;: &quot;XXXX-XXXX-XXXX-8431&quot;,
+                    &quot;card_type&quot;: &quot;american_express&quot;,
+                    &quot;expiration_month&quot;: 10,
+                    &quot;expiration_year&quot;: 2023,
+                    &quot;customer_id&quot;: 71524515,
+                    &quot;current_vault&quot;: &quot;bogus&quot;,
+                    &quot;vault_token&quot;: &quot;1&quot;,
+                    &quot;billing_address&quot;: &quot;&quot;,
+                    &quot;billing_city&quot;: &quot;&quot;,
+                    &quot;billing_state&quot;: &quot;&quot;,
+                    &quot;billing_zip&quot;: &quot;&quot;,
+                    &quot;billing_country&quot;: &quot;&quot;,
+                    &quot;customer_vault_token&quot;: null,
+                    &quot;billing_address_2&quot;: &quot;&quot;,
+                    &quot;payment_type&quot;: &quot;credit_card&quot;,
+                    &quot;disabled&quot;: false,
+                    &quot;site_gateway_setting_id&quot;: null,
+                    &quot;gateway_handle&quot;: null
+                },
+                &quot;group&quot;: null
+            }
+        },
+        {
+            &quot;subscription&quot;: {
+                &quot;id&quot;: 68823221,
+                &quot;state&quot;: &quot;active&quot;,
+                &quot;trial_started_at&quot;: null,
+                &quot;trial_ended_at&quot;: null,
+                &quot;activated_at&quot;: &quot;2023-10-03T13:45:20+10:00&quot;,
+                &quot;created_at&quot;: &quot;2023-10-03T13:45:19+10:00&quot;,
+                &quot;updated_at&quot;: &quot;2023-10-03T13:45:20+10:00&quot;,
+                &quot;expires_at&quot;: null,
+                &quot;balance_in_cents&quot;: 0,
+                &quot;current_period_ends_at&quot;: &quot;2023-11-03T13:45:19+10:00&quot;,
+                &quot;next_assessment_at&quot;: &quot;2023-11-03T13:45:19+10:00&quot;,
+                &quot;canceled_at&quot;: null,
+                &quot;cancellation_message&quot;: null,
+                &quot;next_product_id&quot;: null,
+                &quot;next_product_handle&quot;: null,
+                &quot;cancel_at_end_of_period&quot;: null,
+                &quot;payment_collection_method&quot;: &quot;automatic&quot;,
+                &quot;snap_day&quot;: null,
+                &quot;cancellation_method&quot;: null,
+                &quot;current_period_started_at&quot;: &quot;2023-10-03T13:45:19+10:00&quot;,
+                &quot;previous_state&quot;: &quot;active&quot;,
+                &quot;signup_payment_id&quot;: 932974817,
+                &quot;signup_revenue&quot;: &quot;370.00&quot;,
+                &quot;delayed_cancel_at&quot;: null,
+                &quot;coupon_code&quot;: null,
+                &quot;total_revenue_in_cents&quot;: 37000,
+                &quot;product_price_in_cents&quot;: 0,
+                &quot;product_version_number&quot;: 1,
+                &quot;payment_type&quot;: &quot;credit_card&quot;,
+                &quot;referral_code&quot;: null,
+                &quot;coupon_use_count&quot;: null,
+                &quot;coupon_uses_allowed&quot;: null,
+                &quot;reason_code&quot;: null,
+                &quot;automatically_resume_at&quot;: null,
+                &quot;coupon_codes&quot;: [],
+                &quot;offer_id&quot;: 38510,
+                &quot;payer_id&quot;: null,
+                &quot;receives_invoice_emails&quot;: null,
+                &quot;product_price_point_id&quot;: 2489609,
+                &quot;next_product_price_point_id&quot;: null,
+                &quot;credit_balance_in_cents&quot;: 0,
+                &quot;prepayment_balance_in_cents&quot;: 0,
+                &quot;net_terms&quot;: null,
+                &quot;stored_credential_transaction_id&quot;: null,
+                &quot;locale&quot;: null,
+                &quot;reference&quot;: null,
+                &quot;currency&quot;: &quot;USD&quot;,
+                &quot;on_hold_at&quot;: null,
+                &quot;scheduled_cancellation_at&quot;: null,
+                &quot;product_price_point_type&quot;: &quot;default&quot;,
+                &quot;dunning_communication_delay_enabled&quot;: false,
+                &quot;dunning_communication_delay_time_zone&quot;: null,
+                &quot;customer&quot;: {
+                    &quot;id&quot;: 71443997,
+                    &quot;first_name&quot;: &quot;Vincent &quot;,
+                    &quot;last_name&quot;: &quot;Duag&quot;,
+                    &quot;organization&quot;: &quot;Fligno&quot;,
+                    &quot;email&quot;: &quot;vincent.duag@fligno.com&quot;,
+                    &quot;created_at&quot;: &quot;2023-10-02T18:50:28+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2023-10-03T13:45:20+10:00&quot;,
+                    &quot;reference&quot;: null,
+                    &quot;address&quot;: null,
+                    &quot;address_2&quot;: null,
+                    &quot;city&quot;: null,
+                    &quot;state&quot;: null,
+                    &quot;state_name&quot;: null,
+                    &quot;zip&quot;: null,
+                    &quot;country&quot;: null,
+                    &quot;country_name&quot;: null,
+                    &quot;phone&quot;: &quot;&quot;,
+                    &quot;portal_invite_last_sent_at&quot;: &quot;2023-10-03T13:45:20+10:00&quot;,
+                    &quot;portal_invite_last_accepted_at&quot;: null,
+                    &quot;verified&quot;: false,
+                    &quot;portal_customer_created_at&quot;: &quot;2023-10-03T11:45:04+10:00&quot;,
+                    &quot;vat_number&quot;: null,
+                    &quot;cc_emails&quot;: null,
+                    &quot;tax_exempt&quot;: false,
+                    &quot;parent_id&quot;: null,
+                    &quot;locale&quot;: null
+                },
+                &quot;product&quot;: {
+                    &quot;id&quot;: 6566855,
+                    &quot;name&quot;: &quot;Subscription Plans&quot;,
+                    &quot;handle&quot;: &quot;subscription-plans&quot;,
+                    &quot;description&quot;: &quot;&quot;,
+                    &quot;accounting_code&quot;: &quot;&quot;,
+                    &quot;request_credit_card&quot;: true,
+                    &quot;expiration_interval&quot;: null,
+                    &quot;expiration_interval_unit&quot;: &quot;never&quot;,
+                    &quot;created_at&quot;: &quot;2023-10-03T13:39:58+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2023-10-03T13:39:58+10:00&quot;,
+                    &quot;price_in_cents&quot;: 0,
+                    &quot;interval&quot;: 1,
+                    &quot;interval_unit&quot;: &quot;month&quot;,
+                    &quot;initial_charge_in_cents&quot;: null,
+                    &quot;trial_price_in_cents&quot;: null,
+                    &quot;trial_interval&quot;: null,
+                    &quot;trial_interval_unit&quot;: &quot;month&quot;,
+                    &quot;archived_at&quot;: null,
+                    &quot;require_credit_card&quot;: true,
+                    &quot;return_params&quot;: &quot;&quot;,
+                    &quot;taxable&quot;: false,
+                    &quot;update_return_url&quot;: &quot;&quot;,
+                    &quot;tax_code&quot;: &quot;&quot;,
+                    &quot;initial_charge_after_trial&quot;: false,
+                    &quot;version_number&quot;: 1,
+                    &quot;update_return_params&quot;: &quot;&quot;,
+                    &quot;default_product_price_point_id&quot;: 2489609,
+                    &quot;request_billing_address&quot;: false,
+                    &quot;require_billing_address&quot;: false,
+                    &quot;require_shipping_address&quot;: false,
+                    &quot;use_site_exchange_rate&quot;: true,
+                    &quot;item_category&quot;: null,
+                    &quot;product_price_point_id&quot;: 2489609,
+                    &quot;product_price_point_name&quot;: &quot;Original&quot;,
+                    &quot;product_price_point_handle&quot;: &quot;uuid:73210b80-43cc-013c-8d5c-0a77c508d567&quot;,
+                    &quot;product_family&quot;: {
+                        &quot;id&quot;: 2589717,
+                        &quot;name&quot;: &quot;ChangeGPS&quot;,
+                        &quot;description&quot;: &quot;&quot;,
+                        &quot;handle&quot;: &quot;changegps&quot;,
+                        &quot;accounting_code&quot;: null,
+                        &quot;created_at&quot;: &quot;2023-10-03T13:39:27+10:00&quot;,
+                        &quot;updated_at&quot;: &quot;2023-10-03T13:39:27+10:00&quot;
+                    },
+                    &quot;public_signup_pages&quot;: [
+                        {
+                            &quot;id&quot;: 490954,
+                            &quot;return_url&quot;: null,
+                            &quot;return_params&quot;: &quot;&quot;,
+                            &quot;url&quot;: &quot;https://changegps.chargifypay.com/subscribe/zkpr6qfcv3sf/subscription-plans&quot;,
+                            &quot;enabled&quot;: true,
+                            &quot;nickname&quot;: null,
+                            &quot;currency&quot;: &quot;USD&quot;
+                        }
+                    ]
+                },
+                &quot;credit_card&quot;: {
+                    &quot;id&quot;: 54114333,
+                    &quot;first_name&quot;: &quot;Vincent&quot;,
+                    &quot;last_name&quot;: &quot;Duag&quot;,
+                    &quot;masked_card_number&quot;: &quot;XXXX-XXXX-XXXX-8431&quot;,
+                    &quot;card_type&quot;: &quot;american_express&quot;,
+                    &quot;expiration_month&quot;: 1,
+                    &quot;expiration_year&quot;: 2026,
+                    &quot;customer_id&quot;: 71443997,
+                    &quot;current_vault&quot;: &quot;bogus&quot;,
+                    &quot;vault_token&quot;: &quot;1&quot;,
+                    &quot;billing_address&quot;: &quot;&quot;,
+                    &quot;billing_city&quot;: &quot;&quot;,
+                    &quot;billing_state&quot;: &quot;&quot;,
+                    &quot;billing_zip&quot;: &quot;&quot;,
+                    &quot;billing_country&quot;: &quot;&quot;,
+                    &quot;customer_vault_token&quot;: null,
+                    &quot;billing_address_2&quot;: &quot;&quot;,
+                    &quot;payment_type&quot;: &quot;credit_card&quot;,
+                    &quot;disabled&quot;: false,
+                    &quot;site_gateway_setting_id&quot;: null,
+                    &quot;gateway_handle&quot;: null
+                },
+                &quot;group&quot;: null
+            }
+        },
+        {
+            &quot;subscription&quot;: {
+                &quot;id&quot;: 68822975,
+                &quot;state&quot;: &quot;active&quot;,
+                &quot;trial_started_at&quot;: null,
+                &quot;trial_ended_at&quot;: null,
+                &quot;activated_at&quot;: &quot;2023-10-03T13:33:27+10:00&quot;,
+                &quot;created_at&quot;: &quot;2023-10-03T13:33:26+10:00&quot;,
+                &quot;updated_at&quot;: &quot;2023-10-03T13:36:50+10:00&quot;,
+                &quot;expires_at&quot;: &quot;2024-10-03T13:36:07+10:00&quot;,
+                &quot;balance_in_cents&quot;: 75997,
+                &quot;current_period_ends_at&quot;: &quot;2023-11-03T13:35:14+10:00&quot;,
+                &quot;next_assessment_at&quot;: &quot;2023-11-03T13:35:14+10:00&quot;,
+                &quot;canceled_at&quot;: null,
+                &quot;cancellation_message&quot;: null,
+                &quot;next_product_id&quot;: null,
+                &quot;next_product_handle&quot;: null,
+                &quot;cancel_at_end_of_period&quot;: null,
+                &quot;payment_collection_method&quot;: &quot;automatic&quot;,
+                &quot;snap_day&quot;: null,
+                &quot;cancellation_method&quot;: null,
+                &quot;current_period_started_at&quot;: &quot;2023-10-03T13:35:14+10:00&quot;,
+                &quot;previous_state&quot;: &quot;active&quot;,
+                &quot;signup_payment_id&quot;: 932969426,
+                &quot;signup_revenue&quot;: &quot;111.00&quot;,
+                &quot;delayed_cancel_at&quot;: null,
+                &quot;coupon_code&quot;: null,
+                &quot;total_revenue_in_cents&quot;: 54000,
+                &quot;product_price_in_cents&quot;: 76000,
+                &quot;product_version_number&quot;: 1,
+                &quot;payment_type&quot;: &quot;credit_card&quot;,
+                &quot;referral_code&quot;: null,
+                &quot;coupon_use_count&quot;: null,
+                &quot;coupon_uses_allowed&quot;: null,
+                &quot;reason_code&quot;: null,
+                &quot;automatically_resume_at&quot;: null,
+                &quot;coupon_codes&quot;: [],
+                &quot;offer_id&quot;: 38509,
+                &quot;payer_id&quot;: null,
+                &quot;receives_invoice_emails&quot;: null,
+                &quot;product_price_point_id&quot;: 2481395,
+                &quot;next_product_price_point_id&quot;: null,
+                &quot;credit_balance_in_cents&quot;: 0,
+                &quot;prepayment_balance_in_cents&quot;: 0,
+                &quot;net_terms&quot;: null,
+                &quot;stored_credential_transaction_id&quot;: null,
+                &quot;locale&quot;: null,
+                &quot;reference&quot;: null,
+                &quot;currency&quot;: &quot;USD&quot;,
+                &quot;on_hold_at&quot;: null,
+                &quot;scheduled_cancellation_at&quot;: null,
+                &quot;product_price_point_type&quot;: &quot;default&quot;,
+                &quot;dunning_communication_delay_enabled&quot;: false,
+                &quot;dunning_communication_delay_time_zone&quot;: null,
+                &quot;customer&quot;: {
+                    &quot;id&quot;: 71322325,
+                    &quot;first_name&quot;: &quot;Samantha&quot;,
+                    &quot;last_name&quot;: &quot;Siao&quot;,
+                    &quot;organization&quot;: &quot;Sample Company Inc.&quot;,
+                    &quot;email&quot;: &quot;sample@testcompany.com&quot;,
+                    &quot;created_at&quot;: &quot;2023-09-27T17:05:22+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2023-10-03T13:33:27+10:00&quot;,
+                    &quot;reference&quot;: null,
+                    &quot;address&quot;: null,
+                    &quot;address_2&quot;: null,
+                    &quot;city&quot;: null,
+                    &quot;state&quot;: null,
+                    &quot;state_name&quot;: null,
+                    &quot;zip&quot;: null,
+                    &quot;country&quot;: null,
+                    &quot;country_name&quot;: null,
+                    &quot;phone&quot;: null,
+                    &quot;portal_invite_last_sent_at&quot;: &quot;2023-10-03T13:33:27+10:00&quot;,
+                    &quot;portal_invite_last_accepted_at&quot;: null,
+                    &quot;verified&quot;: false,
+                    &quot;portal_customer_created_at&quot;: &quot;2023-10-03T13:33:27+10:00&quot;,
+                    &quot;vat_number&quot;: null,
+                    &quot;cc_emails&quot;: null,
+                    &quot;tax_exempt&quot;: false,
+                    &quot;parent_id&quot;: null,
+                    &quot;locale&quot;: null
+                },
+                &quot;product&quot;: {
+                    &quot;id&quot;: 6563710,
+                    &quot;name&quot;: &quot;TaxPlan Advanced&quot;,
+                    &quot;handle&quot;: &quot;taxplan-advanced&quot;,
+                    &quot;description&quot;: &quot;&quot;,
+                    &quot;accounting_code&quot;: &quot;&quot;,
+                    &quot;request_credit_card&quot;: true,
+                    &quot;expiration_interval&quot;: 12,
+                    &quot;expiration_interval_unit&quot;: &quot;month&quot;,
+                    &quot;created_at&quot;: &quot;2023-09-27T11:23:04+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2023-09-27T11:33:31+10:00&quot;,
+                    &quot;price_in_cents&quot;: 76000,
+                    &quot;interval&quot;: 1,
+                    &quot;interval_unit&quot;: &quot;month&quot;,
+                    &quot;initial_charge_in_cents&quot;: null,
+                    &quot;trial_price_in_cents&quot;: null,
+                    &quot;trial_interval&quot;: null,
+                    &quot;trial_interval_unit&quot;: &quot;month&quot;,
+                    &quot;archived_at&quot;: null,
+                    &quot;require_credit_card&quot;: true,
+                    &quot;return_params&quot;: &quot;&quot;,
+                    &quot;taxable&quot;: false,
+                    &quot;update_return_url&quot;: &quot;&quot;,
+                    &quot;tax_code&quot;: &quot;&quot;,
+                    &quot;initial_charge_after_trial&quot;: false,
+                    &quot;version_number&quot;: 1,
+                    &quot;update_return_params&quot;: &quot;&quot;,
+                    &quot;default_product_price_point_id&quot;: 2481395,
+                    &quot;request_billing_address&quot;: false,
+                    &quot;require_billing_address&quot;: false,
+                    &quot;require_shipping_address&quot;: false,
+                    &quot;use_site_exchange_rate&quot;: true,
+                    &quot;item_category&quot;: null,
+                    &quot;product_price_point_id&quot;: 2481395,
+                    &quot;product_price_point_name&quot;: &quot;Original&quot;,
+                    &quot;product_price_point_handle&quot;: &quot;uuid:ca4f0140-3f03-013c-e7eb-02d54b3e5e7b&quot;,
+                    &quot;product_family&quot;: {
+                        &quot;id&quot;: 2588068,
+                        &quot;name&quot;: &quot;TaxPlan&quot;,
+                        &quot;description&quot;: &quot;&quot;,
+                        &quot;handle&quot;: &quot;taxplan&quot;,
+                        &quot;accounting_code&quot;: null,
+                        &quot;created_at&quot;: &quot;2023-09-27T11:01:32+10:00&quot;,
+                        &quot;updated_at&quot;: &quot;2023-09-27T11:01:32+10:00&quot;
+                    },
+                    &quot;public_signup_pages&quot;: [
+                        {
+                            &quot;id&quot;: 490692,
+                            &quot;return_url&quot;: null,
+                            &quot;return_params&quot;: &quot;&quot;,
+                            &quot;url&quot;: &quot;https://changegps.chargifypay.com/subscribe/w3s2xd3whjp2/taxplan-advanced&quot;,
+                            &quot;enabled&quot;: true,
+                            &quot;nickname&quot;: null,
+                            &quot;currency&quot;: &quot;USD&quot;
+                        }
+                    ]
+                },
+                &quot;credit_card&quot;: {
+                    &quot;id&quot;: 54115412,
+                    &quot;first_name&quot;: &quot;Vince&quot;,
+                    &quot;last_name&quot;: &quot;Duag&quot;,
+                    &quot;masked_card_number&quot;: &quot;XXXX-XXXX-XXXX-8431&quot;,
+                    &quot;card_type&quot;: &quot;american_express&quot;,
+                    &quot;expiration_month&quot;: 10,
+                    &quot;expiration_year&quot;: 2023,
+                    &quot;customer_id&quot;: 71322325,
+                    &quot;current_vault&quot;: &quot;bogus&quot;,
+                    &quot;vault_token&quot;: &quot;1&quot;,
+                    &quot;billing_address&quot;: &quot;&quot;,
+                    &quot;billing_city&quot;: &quot;&quot;,
+                    &quot;billing_state&quot;: &quot;&quot;,
+                    &quot;billing_zip&quot;: &quot;&quot;,
+                    &quot;billing_country&quot;: &quot;&quot;,
+                    &quot;customer_vault_token&quot;: null,
+                    &quot;billing_address_2&quot;: &quot;&quot;,
+                    &quot;payment_type&quot;: &quot;credit_card&quot;,
+                    &quot;disabled&quot;: false,
+                    &quot;site_gateway_setting_id&quot;: null,
+                    &quot;gateway_handle&quot;: null
+                },
+                &quot;group&quot;: null
+            }
+        },
+        {
+            &quot;subscription&quot;: {
+                &quot;id&quot;: 68822808,
+                &quot;state&quot;: &quot;active&quot;,
+                &quot;trial_started_at&quot;: null,
+                &quot;trial_ended_at&quot;: null,
+                &quot;activated_at&quot;: &quot;2023-10-03T13:20:29+10:00&quot;,
+                &quot;created_at&quot;: &quot;2023-10-03T13:20:26+10:00&quot;,
+                &quot;updated_at&quot;: &quot;2023-10-03T13:45:20+10:00&quot;,
+                &quot;expires_at&quot;: &quot;2024-10-03T13:25:48+10:00&quot;,
+                &quot;balance_in_cents&quot;: 0,
+                &quot;current_period_ends_at&quot;: &quot;2023-11-03T13:25:48+10:00&quot;,
+                &quot;next_assessment_at&quot;: &quot;2023-11-03T13:25:48+10:00&quot;,
+                &quot;canceled_at&quot;: null,
+                &quot;cancellation_message&quot;: null,
+                &quot;next_product_id&quot;: null,
+                &quot;next_product_handle&quot;: null,
+                &quot;cancel_at_end_of_period&quot;: null,
+                &quot;payment_collection_method&quot;: &quot;automatic&quot;,
+                &quot;snap_day&quot;: null,
+                &quot;cancellation_method&quot;: null,
+                &quot;current_period_started_at&quot;: &quot;2023-10-03T13:25:48+10:00&quot;,
+                &quot;previous_state&quot;: &quot;active&quot;,
+                &quot;signup_payment_id&quot;: 932964323,
+                &quot;signup_revenue&quot;: &quot;540.00&quot;,
+                &quot;delayed_cancel_at&quot;: null,
+                &quot;coupon_code&quot;: null,
+                &quot;total_revenue_in_cents&quot;: 54000,
+                &quot;product_price_in_cents&quot;: 0,
+                &quot;product_version_number&quot;: 1,
+                &quot;payment_type&quot;: &quot;credit_card&quot;,
+                &quot;referral_code&quot;: null,
+                &quot;coupon_use_count&quot;: null,
+                &quot;coupon_uses_allowed&quot;: null,
+                &quot;reason_code&quot;: null,
+                &quot;automatically_resume_at&quot;: null,
+                &quot;coupon_codes&quot;: [],
+                &quot;offer_id&quot;: 38508,
+                &quot;payer_id&quot;: null,
+                &quot;receives_invoice_emails&quot;: null,
+                &quot;product_price_point_id&quot;: 1762426,
+                &quot;next_product_price_point_id&quot;: null,
+                &quot;credit_balance_in_cents&quot;: 53994,
+                &quot;prepayment_balance_in_cents&quot;: 0,
+                &quot;net_terms&quot;: null,
+                &quot;stored_credential_transaction_id&quot;: null,
+                &quot;locale&quot;: null,
+                &quot;reference&quot;: null,
+                &quot;currency&quot;: &quot;USD&quot;,
+                &quot;on_hold_at&quot;: null,
+                &quot;scheduled_cancellation_at&quot;: null,
+                &quot;product_price_point_type&quot;: &quot;default&quot;,
+                &quot;dunning_communication_delay_enabled&quot;: false,
+                &quot;dunning_communication_delay_time_zone&quot;: null,
+                &quot;customer&quot;: {
+                    &quot;id&quot;: 71443997,
+                    &quot;first_name&quot;: &quot;Vincent &quot;,
+                    &quot;last_name&quot;: &quot;Duag&quot;,
+                    &quot;organization&quot;: &quot;Fligno&quot;,
+                    &quot;email&quot;: &quot;vincent.duag@fligno.com&quot;,
+                    &quot;created_at&quot;: &quot;2023-10-02T18:50:28+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2023-10-03T13:45:20+10:00&quot;,
+                    &quot;reference&quot;: null,
+                    &quot;address&quot;: null,
+                    &quot;address_2&quot;: null,
+                    &quot;city&quot;: null,
+                    &quot;state&quot;: null,
+                    &quot;state_name&quot;: null,
+                    &quot;zip&quot;: null,
+                    &quot;country&quot;: null,
+                    &quot;country_name&quot;: null,
+                    &quot;phone&quot;: &quot;&quot;,
+                    &quot;portal_invite_last_sent_at&quot;: &quot;2023-10-03T13:45:20+10:00&quot;,
+                    &quot;portal_invite_last_accepted_at&quot;: null,
+                    &quot;verified&quot;: false,
+                    &quot;portal_customer_created_at&quot;: &quot;2023-10-03T11:45:04+10:00&quot;,
+                    &quot;vat_number&quot;: null,
+                    &quot;cc_emails&quot;: null,
+                    &quot;tax_exempt&quot;: false,
+                    &quot;parent_id&quot;: null,
+                    &quot;locale&quot;: null
+                },
+                &quot;product&quot;: {
+                    &quot;id&quot;: 5943865,
+                    &quot;name&quot;: &quot;Base Product&quot;,
+                    &quot;handle&quot;: null,
+                    &quot;description&quot;: &quot;&quot;,
+                    &quot;accounting_code&quot;: &quot;&quot;,
+                    &quot;request_credit_card&quot;: true,
+                    &quot;expiration_interval&quot;: 12,
+                    &quot;expiration_interval_unit&quot;: &quot;month&quot;,
+                    &quot;created_at&quot;: &quot;2022-03-25T12:51:20+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2022-04-22T09:31:32+10:00&quot;,
+                    &quot;price_in_cents&quot;: 0,
+                    &quot;interval&quot;: 1,
+                    &quot;interval_unit&quot;: &quot;month&quot;,
+                    &quot;initial_charge_in_cents&quot;: null,
+                    &quot;trial_price_in_cents&quot;: null,
+                    &quot;trial_interval&quot;: null,
+                    &quot;trial_interval_unit&quot;: &quot;month&quot;,
+                    &quot;archived_at&quot;: null,
+                    &quot;require_credit_card&quot;: false,
+                    &quot;return_params&quot;: &quot;&quot;,
+                    &quot;taxable&quot;: false,
+                    &quot;update_return_url&quot;: &quot;&quot;,
+                    &quot;tax_code&quot;: &quot;&quot;,
+                    &quot;initial_charge_after_trial&quot;: false,
+                    &quot;version_number&quot;: 1,
+                    &quot;update_return_params&quot;: &quot;&quot;,
+                    &quot;default_product_price_point_id&quot;: 1762426,
+                    &quot;request_billing_address&quot;: false,
+                    &quot;require_billing_address&quot;: false,
+                    &quot;require_shipping_address&quot;: false,
+                    &quot;use_site_exchange_rate&quot;: true,
+                    &quot;item_category&quot;: null,
+                    &quot;product_price_point_id&quot;: 1762426,
+                    &quot;product_price_point_name&quot;: &quot;Original&quot;,
+                    &quot;product_price_point_handle&quot;: &quot;uuid:5f811610-8e14-013a-aa93-0a77c508d567&quot;,
+                    &quot;product_family&quot;: {
+                        &quot;id&quot;: 2082792,
+                        &quot;name&quot;: &quot;Component Based Billing&quot;,
+                        &quot;description&quot;: &quot;&quot;,
+                        &quot;handle&quot;: &quot;component-based-billing&quot;,
+                        &quot;accounting_code&quot;: null,
+                        &quot;created_at&quot;: &quot;2022-03-23T11:02:46+10:00&quot;,
+                        &quot;updated_at&quot;: &quot;2022-04-22T09:36:07+10:00&quot;
+                    },
+                    &quot;public_signup_pages&quot;: [
+                        {
+                            &quot;id&quot;: 462519,
+                            &quot;return_url&quot;: null,
+                            &quot;return_params&quot;: &quot;&quot;,
+                            &quot;url&quot;: &quot;https://changegps.chargifypay.com/subscribe/wx6zq4q3jc2z&quot;,
+                            &quot;enabled&quot;: true,
+                            &quot;nickname&quot;: null,
+                            &quot;currency&quot;: &quot;USD&quot;
+                        }
+                    ]
+                },
+                &quot;credit_card&quot;: {
+                    &quot;id&quot;: 54114333,
+                    &quot;first_name&quot;: &quot;Vincent&quot;,
+                    &quot;last_name&quot;: &quot;Duag&quot;,
+                    &quot;masked_card_number&quot;: &quot;XXXX-XXXX-XXXX-8431&quot;,
+                    &quot;card_type&quot;: &quot;american_express&quot;,
+                    &quot;expiration_month&quot;: 1,
+                    &quot;expiration_year&quot;: 2026,
+                    &quot;customer_id&quot;: 71443997,
+                    &quot;current_vault&quot;: &quot;bogus&quot;,
+                    &quot;vault_token&quot;: &quot;1&quot;,
+                    &quot;billing_address&quot;: &quot;&quot;,
+                    &quot;billing_city&quot;: &quot;&quot;,
+                    &quot;billing_state&quot;: &quot;&quot;,
+                    &quot;billing_zip&quot;: &quot;&quot;,
+                    &quot;billing_country&quot;: &quot;&quot;,
+                    &quot;customer_vault_token&quot;: null,
+                    &quot;billing_address_2&quot;: &quot;&quot;,
+                    &quot;payment_type&quot;: &quot;credit_card&quot;,
+                    &quot;disabled&quot;: false,
+                    &quot;site_gateway_setting_id&quot;: null,
+                    &quot;gateway_handle&quot;: null
+                },
+                &quot;group&quot;: null
+            }
+        },
+        {
+            &quot;subscription&quot;: {
+                &quot;id&quot;: 68822599,
+                &quot;state&quot;: &quot;active&quot;,
+                &quot;trial_started_at&quot;: null,
+                &quot;trial_ended_at&quot;: null,
+                &quot;activated_at&quot;: &quot;2023-10-03T13:05:20+10:00&quot;,
+                &quot;created_at&quot;: &quot;2023-10-03T13:05:19+10:00&quot;,
+                &quot;updated_at&quot;: &quot;2023-10-03T13:45:20+10:00&quot;,
+                &quot;expires_at&quot;: &quot;2024-10-03T13:05:19+10:00&quot;,
+                &quot;balance_in_cents&quot;: 0,
+                &quot;current_period_ends_at&quot;: &quot;2023-11-03T13:05:19+10:00&quot;,
+                &quot;next_assessment_at&quot;: &quot;2023-11-03T13:05:19+10:00&quot;,
+                &quot;canceled_at&quot;: null,
+                &quot;cancellation_message&quot;: null,
+                &quot;next_product_id&quot;: null,
+                &quot;next_product_handle&quot;: null,
+                &quot;cancel_at_end_of_period&quot;: null,
+                &quot;payment_collection_method&quot;: &quot;automatic&quot;,
+                &quot;snap_day&quot;: null,
+                &quot;cancellation_method&quot;: null,
+                &quot;current_period_started_at&quot;: &quot;2023-10-03T13:05:19+10:00&quot;,
+                &quot;previous_state&quot;: &quot;active&quot;,
+                &quot;signup_payment_id&quot;: 932962801,
+                &quot;signup_revenue&quot;: &quot;851.47&quot;,
+                &quot;delayed_cancel_at&quot;: null,
+                &quot;coupon_code&quot;: null,
+                &quot;total_revenue_in_cents&quot;: 85147,
+                &quot;product_price_in_cents&quot;: 84124,
+                &quot;product_version_number&quot;: 1,
+                &quot;payment_type&quot;: &quot;credit_card&quot;,
+                &quot;referral_code&quot;: null,
+                &quot;coupon_use_count&quot;: null,
+                &quot;coupon_uses_allowed&quot;: null,
+                &quot;reason_code&quot;: null,
+                &quot;automatically_resume_at&quot;: null,
+                &quot;coupon_codes&quot;: [],
+                &quot;offer_id&quot;: null,
+                &quot;payer_id&quot;: null,
+                &quot;receives_invoice_emails&quot;: null,
+                &quot;product_price_point_id&quot;: 2481384,
+                &quot;next_product_price_point_id&quot;: null,
+                &quot;credit_balance_in_cents&quot;: 0,
+                &quot;prepayment_balance_in_cents&quot;: 0,
+                &quot;net_terms&quot;: null,
+                &quot;stored_credential_transaction_id&quot;: null,
+                &quot;locale&quot;: null,
+                &quot;reference&quot;: null,
+                &quot;currency&quot;: &quot;AUD&quot;,
+                &quot;on_hold_at&quot;: null,
+                &quot;scheduled_cancellation_at&quot;: null,
+                &quot;product_price_point_type&quot;: &quot;default&quot;,
+                &quot;dunning_communication_delay_enabled&quot;: false,
+                &quot;dunning_communication_delay_time_zone&quot;: null,
+                &quot;customer&quot;: {
+                    &quot;id&quot;: 71443997,
+                    &quot;first_name&quot;: &quot;Vincent &quot;,
+                    &quot;last_name&quot;: &quot;Duag&quot;,
+                    &quot;organization&quot;: &quot;Fligno&quot;,
+                    &quot;email&quot;: &quot;vincent.duag@fligno.com&quot;,
+                    &quot;created_at&quot;: &quot;2023-10-02T18:50:28+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2023-10-03T13:45:20+10:00&quot;,
+                    &quot;reference&quot;: null,
+                    &quot;address&quot;: null,
+                    &quot;address_2&quot;: null,
+                    &quot;city&quot;: null,
+                    &quot;state&quot;: null,
+                    &quot;state_name&quot;: null,
+                    &quot;zip&quot;: null,
+                    &quot;country&quot;: null,
+                    &quot;country_name&quot;: null,
+                    &quot;phone&quot;: &quot;&quot;,
+                    &quot;portal_invite_last_sent_at&quot;: &quot;2023-10-03T13:45:20+10:00&quot;,
+                    &quot;portal_invite_last_accepted_at&quot;: null,
+                    &quot;verified&quot;: false,
+                    &quot;portal_customer_created_at&quot;: &quot;2023-10-03T11:45:04+10:00&quot;,
+                    &quot;vat_number&quot;: null,
+                    &quot;cc_emails&quot;: null,
+                    &quot;tax_exempt&quot;: false,
+                    &quot;parent_id&quot;: null,
+                    &quot;locale&quot;: null
+                },
+                &quot;product&quot;: {
+                    &quot;id&quot;: 6563709,
+                    &quot;name&quot;: &quot;TaxPlan Pro&quot;,
+                    &quot;handle&quot;: &quot;taxplan-pro&quot;,
+                    &quot;description&quot;: &quot;&quot;,
+                    &quot;accounting_code&quot;: &quot;&quot;,
+                    &quot;request_credit_card&quot;: true,
+                    &quot;expiration_interval&quot;: 12,
+                    &quot;expiration_interval_unit&quot;: &quot;month&quot;,
+                    &quot;created_at&quot;: &quot;2023-09-27T11:04:24+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2023-09-27T15:17:03+10:00&quot;,
+                    &quot;price_in_cents&quot;: 84124,
+                    &quot;interval&quot;: 1,
+                    &quot;interval_unit&quot;: &quot;month&quot;,
+                    &quot;initial_charge_in_cents&quot;: null,
+                    &quot;trial_price_in_cents&quot;: null,
+                    &quot;trial_interval&quot;: null,
+                    &quot;trial_interval_unit&quot;: &quot;month&quot;,
+                    &quot;archived_at&quot;: null,
+                    &quot;require_credit_card&quot;: true,
+                    &quot;return_params&quot;: &quot;&quot;,
+                    &quot;taxable&quot;: true,
+                    &quot;update_return_url&quot;: &quot;&quot;,
+                    &quot;tax_code&quot;: &quot;GST&quot;,
+                    &quot;initial_charge_after_trial&quot;: false,
+                    &quot;version_number&quot;: 1,
+                    &quot;update_return_params&quot;: &quot;&quot;,
+                    &quot;default_product_price_point_id&quot;: 2481384,
+                    &quot;request_billing_address&quot;: false,
+                    &quot;require_billing_address&quot;: false,
+                    &quot;require_shipping_address&quot;: false,
+                    &quot;use_site_exchange_rate&quot;: true,
+                    &quot;item_category&quot;: null,
+                    &quot;product_price_point_id&quot;: 2481384,
+                    &quot;product_price_point_name&quot;: &quot;Original&quot;,
+                    &quot;product_price_point_handle&quot;: &quot;uuid:b1ece4f0-3f03-013c-fa45-0a06e71b1fdb&quot;,
+                    &quot;product_family&quot;: {
+                        &quot;id&quot;: 2588068,
+                        &quot;name&quot;: &quot;TaxPlan&quot;,
+                        &quot;description&quot;: &quot;&quot;,
+                        &quot;handle&quot;: &quot;taxplan&quot;,
+                        &quot;accounting_code&quot;: null,
+                        &quot;created_at&quot;: &quot;2023-09-27T11:01:32+10:00&quot;,
+                        &quot;updated_at&quot;: &quot;2023-09-27T11:01:32+10:00&quot;
+                    },
+                    &quot;public_signup_pages&quot;: [
+                        {
+                            &quot;id&quot;: 490691,
+                            &quot;return_url&quot;: null,
+                            &quot;return_params&quot;: &quot;&quot;,
+                            &quot;url&quot;: &quot;https://changegps.chargifypay.com/subscribe/bvpt3pgtkrhd/taxplan-pro&quot;,
+                            &quot;enabled&quot;: true,
+                            &quot;nickname&quot;: null,
+                            &quot;currency&quot;: &quot;USD&quot;
+                        }
+                    ]
+                },
+                &quot;credit_card&quot;: {
+                    &quot;id&quot;: 54114333,
+                    &quot;first_name&quot;: &quot;Vincent&quot;,
+                    &quot;last_name&quot;: &quot;Duag&quot;,
+                    &quot;masked_card_number&quot;: &quot;XXXX-XXXX-XXXX-8431&quot;,
+                    &quot;card_type&quot;: &quot;american_express&quot;,
+                    &quot;expiration_month&quot;: 1,
+                    &quot;expiration_year&quot;: 2026,
+                    &quot;customer_id&quot;: 71443997,
+                    &quot;current_vault&quot;: &quot;bogus&quot;,
+                    &quot;vault_token&quot;: &quot;1&quot;,
+                    &quot;billing_address&quot;: &quot;&quot;,
+                    &quot;billing_city&quot;: &quot;&quot;,
+                    &quot;billing_state&quot;: &quot;&quot;,
+                    &quot;billing_zip&quot;: &quot;&quot;,
+                    &quot;billing_country&quot;: &quot;&quot;,
+                    &quot;customer_vault_token&quot;: null,
+                    &quot;billing_address_2&quot;: &quot;&quot;,
+                    &quot;payment_type&quot;: &quot;credit_card&quot;,
+                    &quot;disabled&quot;: false,
+                    &quot;site_gateway_setting_id&quot;: null,
+                    &quot;gateway_handle&quot;: null
+                },
+                &quot;group&quot;: null
+            }
+        },
+        {
+            &quot;subscription&quot;: {
+                &quot;id&quot;: 68820857,
+                &quot;state&quot;: &quot;active&quot;,
+                &quot;trial_started_at&quot;: null,
+                &quot;trial_ended_at&quot;: null,
+                &quot;activated_at&quot;: &quot;2023-10-03T11:45:04+10:00&quot;,
+                &quot;created_at&quot;: &quot;2023-10-03T11:45:02+10:00&quot;,
+                &quot;updated_at&quot;: &quot;2023-10-03T13:45:20+10:00&quot;,
+                &quot;expires_at&quot;: &quot;2024-10-03T11:45:02+10:00&quot;,
+                &quot;balance_in_cents&quot;: 0,
+                &quot;current_period_ends_at&quot;: &quot;2023-11-03T11:45:02+10:00&quot;,
+                &quot;next_assessment_at&quot;: &quot;2023-11-03T11:45:02+10:00&quot;,
+                &quot;canceled_at&quot;: null,
+                &quot;cancellation_message&quot;: null,
+                &quot;next_product_id&quot;: null,
+                &quot;next_product_handle&quot;: null,
+                &quot;cancel_at_end_of_period&quot;: null,
+                &quot;payment_collection_method&quot;: &quot;automatic&quot;,
+                &quot;snap_day&quot;: null,
+                &quot;cancellation_method&quot;: null,
+                &quot;current_period_started_at&quot;: &quot;2023-10-03T11:45:02+10:00&quot;,
+                &quot;previous_state&quot;: &quot;active&quot;,
+                &quot;signup_payment_id&quot;: 932921881,
+                &quot;signup_revenue&quot;: &quot;2125.52&quot;,
+                &quot;delayed_cancel_at&quot;: null,
+                &quot;coupon_code&quot;: null,
+                &quot;total_revenue_in_cents&quot;: 212552,
+                &quot;product_price_in_cents&quot;: 84124,
+                &quot;product_version_number&quot;: 1,
+                &quot;payment_type&quot;: &quot;credit_card&quot;,
+                &quot;referral_code&quot;: null,
+                &quot;coupon_use_count&quot;: null,
+                &quot;coupon_uses_allowed&quot;: null,
+                &quot;reason_code&quot;: null,
+                &quot;automatically_resume_at&quot;: null,
+                &quot;coupon_codes&quot;: [],
+                &quot;offer_id&quot;: null,
+                &quot;payer_id&quot;: null,
+                &quot;receives_invoice_emails&quot;: null,
+                &quot;product_price_point_id&quot;: 2481384,
+                &quot;next_product_price_point_id&quot;: null,
+                &quot;credit_balance_in_cents&quot;: 0,
+                &quot;prepayment_balance_in_cents&quot;: 0,
+                &quot;net_terms&quot;: null,
+                &quot;stored_credential_transaction_id&quot;: null,
+                &quot;locale&quot;: null,
+                &quot;reference&quot;: null,
+                &quot;currency&quot;: &quot;AUD&quot;,
+                &quot;on_hold_at&quot;: null,
+                &quot;scheduled_cancellation_at&quot;: null,
+                &quot;product_price_point_type&quot;: &quot;default&quot;,
+                &quot;dunning_communication_delay_enabled&quot;: false,
+                &quot;dunning_communication_delay_time_zone&quot;: null,
+                &quot;customer&quot;: {
+                    &quot;id&quot;: 71443997,
+                    &quot;first_name&quot;: &quot;Vincent &quot;,
+                    &quot;last_name&quot;: &quot;Duag&quot;,
+                    &quot;organization&quot;: &quot;Fligno&quot;,
+                    &quot;email&quot;: &quot;vincent.duag@fligno.com&quot;,
+                    &quot;created_at&quot;: &quot;2023-10-02T18:50:28+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2023-10-03T13:45:20+10:00&quot;,
+                    &quot;reference&quot;: null,
+                    &quot;address&quot;: null,
+                    &quot;address_2&quot;: null,
+                    &quot;city&quot;: null,
+                    &quot;state&quot;: null,
+                    &quot;state_name&quot;: null,
+                    &quot;zip&quot;: null,
+                    &quot;country&quot;: null,
+                    &quot;country_name&quot;: null,
+                    &quot;phone&quot;: &quot;&quot;,
+                    &quot;portal_invite_last_sent_at&quot;: &quot;2023-10-03T13:45:20+10:00&quot;,
+                    &quot;portal_invite_last_accepted_at&quot;: null,
+                    &quot;verified&quot;: false,
+                    &quot;portal_customer_created_at&quot;: &quot;2023-10-03T11:45:04+10:00&quot;,
+                    &quot;vat_number&quot;: null,
+                    &quot;cc_emails&quot;: null,
+                    &quot;tax_exempt&quot;: false,
+                    &quot;parent_id&quot;: null,
+                    &quot;locale&quot;: null
+                },
+                &quot;product&quot;: {
+                    &quot;id&quot;: 6563709,
+                    &quot;name&quot;: &quot;TaxPlan Pro&quot;,
+                    &quot;handle&quot;: &quot;taxplan-pro&quot;,
+                    &quot;description&quot;: &quot;&quot;,
+                    &quot;accounting_code&quot;: &quot;&quot;,
+                    &quot;request_credit_card&quot;: true,
+                    &quot;expiration_interval&quot;: 12,
+                    &quot;expiration_interval_unit&quot;: &quot;month&quot;,
+                    &quot;created_at&quot;: &quot;2023-09-27T11:04:24+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2023-09-27T15:17:03+10:00&quot;,
+                    &quot;price_in_cents&quot;: 84124,
+                    &quot;interval&quot;: 1,
+                    &quot;interval_unit&quot;: &quot;month&quot;,
+                    &quot;initial_charge_in_cents&quot;: null,
+                    &quot;trial_price_in_cents&quot;: null,
+                    &quot;trial_interval&quot;: null,
+                    &quot;trial_interval_unit&quot;: &quot;month&quot;,
+                    &quot;archived_at&quot;: null,
+                    &quot;require_credit_card&quot;: true,
+                    &quot;return_params&quot;: &quot;&quot;,
+                    &quot;taxable&quot;: true,
+                    &quot;update_return_url&quot;: &quot;&quot;,
+                    &quot;tax_code&quot;: &quot;GST&quot;,
+                    &quot;initial_charge_after_trial&quot;: false,
+                    &quot;version_number&quot;: 1,
+                    &quot;update_return_params&quot;: &quot;&quot;,
+                    &quot;default_product_price_point_id&quot;: 2481384,
+                    &quot;request_billing_address&quot;: false,
+                    &quot;require_billing_address&quot;: false,
+                    &quot;require_shipping_address&quot;: false,
+                    &quot;use_site_exchange_rate&quot;: true,
+                    &quot;item_category&quot;: null,
+                    &quot;product_price_point_id&quot;: 2481384,
+                    &quot;product_price_point_name&quot;: &quot;Original&quot;,
+                    &quot;product_price_point_handle&quot;: &quot;uuid:b1ece4f0-3f03-013c-fa45-0a06e71b1fdb&quot;,
+                    &quot;product_family&quot;: {
+                        &quot;id&quot;: 2588068,
+                        &quot;name&quot;: &quot;TaxPlan&quot;,
+                        &quot;description&quot;: &quot;&quot;,
+                        &quot;handle&quot;: &quot;taxplan&quot;,
+                        &quot;accounting_code&quot;: null,
+                        &quot;created_at&quot;: &quot;2023-09-27T11:01:32+10:00&quot;,
+                        &quot;updated_at&quot;: &quot;2023-09-27T11:01:32+10:00&quot;
+                    },
+                    &quot;public_signup_pages&quot;: [
+                        {
+                            &quot;id&quot;: 490691,
+                            &quot;return_url&quot;: null,
+                            &quot;return_params&quot;: &quot;&quot;,
+                            &quot;url&quot;: &quot;https://changegps.chargifypay.com/subscribe/bvpt3pgtkrhd/taxplan-pro&quot;,
+                            &quot;enabled&quot;: true,
+                            &quot;nickname&quot;: null,
+                            &quot;currency&quot;: &quot;USD&quot;
+                        }
+                    ]
+                },
+                &quot;credit_card&quot;: {
+                    &quot;id&quot;: 54114333,
+                    &quot;first_name&quot;: &quot;Vincent&quot;,
+                    &quot;last_name&quot;: &quot;Duag&quot;,
+                    &quot;masked_card_number&quot;: &quot;XXXX-XXXX-XXXX-8431&quot;,
+                    &quot;card_type&quot;: &quot;american_express&quot;,
+                    &quot;expiration_month&quot;: 1,
+                    &quot;expiration_year&quot;: 2026,
+                    &quot;customer_id&quot;: 71443997,
+                    &quot;current_vault&quot;: &quot;bogus&quot;,
+                    &quot;vault_token&quot;: &quot;1&quot;,
+                    &quot;billing_address&quot;: &quot;&quot;,
+                    &quot;billing_city&quot;: &quot;&quot;,
+                    &quot;billing_state&quot;: &quot;&quot;,
+                    &quot;billing_zip&quot;: &quot;&quot;,
+                    &quot;billing_country&quot;: &quot;&quot;,
+                    &quot;customer_vault_token&quot;: null,
+                    &quot;billing_address_2&quot;: &quot;&quot;,
+                    &quot;payment_type&quot;: &quot;credit_card&quot;,
+                    &quot;disabled&quot;: false,
+                    &quot;site_gateway_setting_id&quot;: null,
+                    &quot;gateway_handle&quot;: null
+                },
+                &quot;group&quot;: null
+            }
+        },
+        {
+            &quot;subscription&quot;: {
+                &quot;id&quot;: 68672868,
+                &quot;state&quot;: &quot;active&quot;,
+                &quot;trial_started_at&quot;: null,
+                &quot;trial_ended_at&quot;: null,
+                &quot;activated_at&quot;: &quot;2023-09-27T16:37:03+10:00&quot;,
+                &quot;created_at&quot;: &quot;2023-09-27T16:37:02+10:00&quot;,
+                &quot;updated_at&quot;: &quot;2023-09-27T16:37:04+10:00&quot;,
+                &quot;expires_at&quot;: &quot;2024-09-27T16:37:02+10:00&quot;,
+                &quot;balance_in_cents&quot;: 0,
+                &quot;current_period_ends_at&quot;: &quot;2023-10-27T16:37:02+10:00&quot;,
+                &quot;next_assessment_at&quot;: &quot;2023-10-27T16:37:02+10:00&quot;,
+                &quot;canceled_at&quot;: null,
+                &quot;cancellation_message&quot;: null,
+                &quot;next_product_id&quot;: null,
+                &quot;next_product_handle&quot;: null,
+                &quot;cancel_at_end_of_period&quot;: null,
+                &quot;payment_collection_method&quot;: &quot;automatic&quot;,
+                &quot;snap_day&quot;: null,
+                &quot;cancellation_method&quot;: null,
+                &quot;current_period_started_at&quot;: &quot;2023-09-27T16:37:02+10:00&quot;,
+                &quot;previous_state&quot;: &quot;active&quot;,
+                &quot;signup_payment_id&quot;: 927390039,
+                &quot;signup_revenue&quot;: &quot;1692.32&quot;,
+                &quot;delayed_cancel_at&quot;: null,
+                &quot;coupon_code&quot;: null,
+                &quot;total_revenue_in_cents&quot;: 169232,
+                &quot;product_price_in_cents&quot;: 84124,
+                &quot;product_version_number&quot;: 1,
+                &quot;payment_type&quot;: &quot;credit_card&quot;,
+                &quot;referral_code&quot;: null,
+                &quot;coupon_use_count&quot;: null,
+                &quot;coupon_uses_allowed&quot;: null,
+                &quot;reason_code&quot;: null,
+                &quot;automatically_resume_at&quot;: null,
+                &quot;coupon_codes&quot;: [],
+                &quot;offer_id&quot;: null,
+                &quot;payer_id&quot;: null,
+                &quot;receives_invoice_emails&quot;: null,
+                &quot;product_price_point_id&quot;: 2481384,
+                &quot;next_product_price_point_id&quot;: null,
+                &quot;credit_balance_in_cents&quot;: 0,
+                &quot;prepayment_balance_in_cents&quot;: 0,
+                &quot;net_terms&quot;: null,
+                &quot;stored_credential_transaction_id&quot;: null,
+                &quot;locale&quot;: null,
+                &quot;reference&quot;: null,
+                &quot;currency&quot;: &quot;AUD&quot;,
+                &quot;on_hold_at&quot;: null,
+                &quot;scheduled_cancellation_at&quot;: null,
+                &quot;product_price_point_type&quot;: &quot;default&quot;,
+                &quot;dunning_communication_delay_enabled&quot;: false,
+                &quot;dunning_communication_delay_time_zone&quot;: null,
+                &quot;customer&quot;: {
+                    &quot;id&quot;: 71314832,
+                    &quot;first_name&quot;: &quot;Gabrielle&quot;,
+                    &quot;last_name&quot;: &quot;Luna&quot;,
+                    &quot;organization&quot;: &quot;Luna Inc.&quot;,
+                    &quot;email&quot;: &quot;gab@fligno.com&quot;,
+                    &quot;created_at&quot;: &quot;2023-09-27T11:20:50+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2023-09-27T16:37:04+10:00&quot;,
+                    &quot;reference&quot;: null,
+                    &quot;address&quot;: &quot;&quot;,
+                    &quot;address_2&quot;: &quot;&quot;,
+                    &quot;city&quot;: &quot;&quot;,
+                    &quot;state&quot;: &quot;&quot;,
+                    &quot;state_name&quot;: &quot;&quot;,
+                    &quot;zip&quot;: &quot;&quot;,
+                    &quot;country&quot;: &quot;&quot;,
+                    &quot;country_name&quot;: &quot;&quot;,
+                    &quot;phone&quot;: &quot;+639177724137&quot;,
+                    &quot;portal_invite_last_sent_at&quot;: &quot;2023-09-27T16:37:04+10:00&quot;,
+                    &quot;portal_invite_last_accepted_at&quot;: null,
+                    &quot;verified&quot;: false,
+                    &quot;portal_customer_created_at&quot;: &quot;2023-09-27T16:37:04+10:00&quot;,
+                    &quot;vat_number&quot;: &quot;&quot;,
+                    &quot;cc_emails&quot;: &quot;&quot;,
+                    &quot;tax_exempt&quot;: false,
+                    &quot;parent_id&quot;: null,
+                    &quot;locale&quot;: null
+                },
+                &quot;product&quot;: {
+                    &quot;id&quot;: 6563709,
+                    &quot;name&quot;: &quot;TaxPlan Pro&quot;,
+                    &quot;handle&quot;: &quot;taxplan-pro&quot;,
+                    &quot;description&quot;: &quot;&quot;,
+                    &quot;accounting_code&quot;: &quot;&quot;,
+                    &quot;request_credit_card&quot;: true,
+                    &quot;expiration_interval&quot;: 12,
+                    &quot;expiration_interval_unit&quot;: &quot;month&quot;,
+                    &quot;created_at&quot;: &quot;2023-09-27T11:04:24+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2023-09-27T15:17:03+10:00&quot;,
+                    &quot;price_in_cents&quot;: 84124,
+                    &quot;interval&quot;: 1,
+                    &quot;interval_unit&quot;: &quot;month&quot;,
+                    &quot;initial_charge_in_cents&quot;: null,
+                    &quot;trial_price_in_cents&quot;: null,
+                    &quot;trial_interval&quot;: null,
+                    &quot;trial_interval_unit&quot;: &quot;month&quot;,
+                    &quot;archived_at&quot;: null,
+                    &quot;require_credit_card&quot;: true,
+                    &quot;return_params&quot;: &quot;&quot;,
+                    &quot;taxable&quot;: true,
+                    &quot;update_return_url&quot;: &quot;&quot;,
+                    &quot;tax_code&quot;: &quot;GST&quot;,
+                    &quot;initial_charge_after_trial&quot;: false,
+                    &quot;version_number&quot;: 1,
+                    &quot;update_return_params&quot;: &quot;&quot;,
+                    &quot;default_product_price_point_id&quot;: 2481384,
+                    &quot;request_billing_address&quot;: false,
+                    &quot;require_billing_address&quot;: false,
+                    &quot;require_shipping_address&quot;: false,
+                    &quot;use_site_exchange_rate&quot;: true,
+                    &quot;item_category&quot;: null,
+                    &quot;product_price_point_id&quot;: 2481384,
+                    &quot;product_price_point_name&quot;: &quot;Original&quot;,
+                    &quot;product_price_point_handle&quot;: &quot;uuid:b1ece4f0-3f03-013c-fa45-0a06e71b1fdb&quot;,
+                    &quot;product_family&quot;: {
+                        &quot;id&quot;: 2588068,
+                        &quot;name&quot;: &quot;TaxPlan&quot;,
+                        &quot;description&quot;: &quot;&quot;,
+                        &quot;handle&quot;: &quot;taxplan&quot;,
+                        &quot;accounting_code&quot;: null,
+                        &quot;created_at&quot;: &quot;2023-09-27T11:01:32+10:00&quot;,
+                        &quot;updated_at&quot;: &quot;2023-09-27T11:01:32+10:00&quot;
+                    },
+                    &quot;public_signup_pages&quot;: [
+                        {
+                            &quot;id&quot;: 490691,
+                            &quot;return_url&quot;: null,
+                            &quot;return_params&quot;: &quot;&quot;,
+                            &quot;url&quot;: &quot;https://changegps.chargifypay.com/subscribe/bvpt3pgtkrhd/taxplan-pro&quot;,
+                            &quot;enabled&quot;: true,
+                            &quot;nickname&quot;: null,
+                            &quot;currency&quot;: &quot;USD&quot;
+                        }
+                    ]
+                },
+                &quot;credit_card&quot;: {
+                    &quot;id&quot;: 53998874,
+                    &quot;first_name&quot;: &quot;Brigitte&quot;,
+                    &quot;last_name&quot;: &quot;Ernser&quot;,
+                    &quot;masked_card_number&quot;: &quot;XXXX-XXXX-XXXX-8431&quot;,
+                    &quot;card_type&quot;: &quot;american_express&quot;,
+                    &quot;expiration_month&quot;: 9,
+                    &quot;expiration_year&quot;: 2024,
+                    &quot;customer_id&quot;: 71314832,
+                    &quot;current_vault&quot;: &quot;bogus&quot;,
+                    &quot;vault_token&quot;: &quot;1&quot;,
+                    &quot;billing_address&quot;: &quot;02036 Block Point&quot;,
+                    &quot;billing_city&quot;: &quot;Lewisfurt&quot;,
+                    &quot;billing_state&quot;: &quot;CO&quot;,
+                    &quot;billing_zip&quot;: &quot;55993-4026&quot;,
+                    &quot;billing_country&quot;: &quot;US&quot;,
+                    &quot;customer_vault_token&quot;: null,
+                    &quot;billing_address_2&quot;: &quot;Apt. 073&quot;,
+                    &quot;payment_type&quot;: &quot;credit_card&quot;,
+                    &quot;disabled&quot;: false,
+                    &quot;site_gateway_setting_id&quot;: null,
+                    &quot;gateway_handle&quot;: null
+                },
+                &quot;group&quot;: null
+            }
+        },
+        {
+            &quot;subscription&quot;: {
+                &quot;id&quot;: 68672584,
+                &quot;state&quot;: &quot;active&quot;,
+                &quot;trial_started_at&quot;: null,
+                &quot;trial_ended_at&quot;: null,
+                &quot;activated_at&quot;: &quot;2023-09-27T16:19:44+10:00&quot;,
+                &quot;created_at&quot;: &quot;2023-09-27T16:19:43+10:00&quot;,
+                &quot;updated_at&quot;: &quot;2023-10-03T14:39:59+10:00&quot;,
+                &quot;expires_at&quot;: &quot;2024-09-27T16:19:43+10:00&quot;,
+                &quot;balance_in_cents&quot;: 0,
+                &quot;current_period_ends_at&quot;: &quot;2024-09-27T16:19:43+10:00&quot;,
+                &quot;next_assessment_at&quot;: &quot;2024-09-27T16:19:43+10:00&quot;,
+                &quot;canceled_at&quot;: null,
+                &quot;cancellation_message&quot;: null,
+                &quot;next_product_id&quot;: null,
+                &quot;next_product_handle&quot;: null,
+                &quot;cancel_at_end_of_period&quot;: null,
+                &quot;payment_collection_method&quot;: &quot;automatic&quot;,
+                &quot;snap_day&quot;: null,
+                &quot;cancellation_method&quot;: null,
+                &quot;current_period_started_at&quot;: &quot;2023-09-27T16:19:43+10:00&quot;,
+                &quot;previous_state&quot;: &quot;active&quot;,
+                &quot;signup_payment_id&quot;: 927385910,
+                &quot;signup_revenue&quot;: &quot;783.48&quot;,
+                &quot;delayed_cancel_at&quot;: null,
+                &quot;coupon_code&quot;: null,
+                &quot;total_revenue_in_cents&quot;: 78348,
+                &quot;product_price_in_cents&quot;: 77893,
+                &quot;product_version_number&quot;: 1,
+                &quot;payment_type&quot;: &quot;credit_card&quot;,
+                &quot;referral_code&quot;: null,
+                &quot;coupon_use_count&quot;: null,
+                &quot;coupon_uses_allowed&quot;: null,
+                &quot;reason_code&quot;: null,
+                &quot;automatically_resume_at&quot;: null,
+                &quot;coupon_codes&quot;: [],
+                &quot;offer_id&quot;: null,
+                &quot;payer_id&quot;: null,
+                &quot;receives_invoice_emails&quot;: null,
+                &quot;product_price_point_id&quot;: 2481500,
+                &quot;next_product_price_point_id&quot;: null,
+                &quot;credit_balance_in_cents&quot;: 0,
+                &quot;prepayment_balance_in_cents&quot;: 0,
+                &quot;net_terms&quot;: null,
+                &quot;stored_credential_transaction_id&quot;: null,
+                &quot;locale&quot;: null,
+                &quot;reference&quot;: null,
+                &quot;currency&quot;: &quot;AUD&quot;,
+                &quot;on_hold_at&quot;: null,
+                &quot;scheduled_cancellation_at&quot;: null,
+                &quot;product_price_point_type&quot;: &quot;default&quot;,
+                &quot;dunning_communication_delay_enabled&quot;: false,
+                &quot;dunning_communication_delay_time_zone&quot;: null,
+                &quot;customer&quot;: {
+                    &quot;id&quot;: 71319462,
+                    &quot;first_name&quot;: &quot;Saito&quot;,
+                    &quot;last_name&quot;: &quot;Porcadilla&quot;,
+                    &quot;organization&quot;: &quot;Protect test company&quot;,
+                    &quot;email&quot;: &quot;protect@protecttestcompany.com&quot;,
+                    &quot;created_at&quot;: &quot;2023-09-27T14:32:17+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2023-10-03T14:39:59+10:00&quot;,
+                    &quot;reference&quot;: null,
+                    &quot;address&quot;: &quot;&quot;,
+                    &quot;address_2&quot;: &quot;&quot;,
+                    &quot;city&quot;: &quot;&quot;,
+                    &quot;state&quot;: &quot;&quot;,
+                    &quot;state_name&quot;: &quot;&quot;,
+                    &quot;zip&quot;: &quot;&quot;,
+                    &quot;country&quot;: &quot;&quot;,
+                    &quot;country_name&quot;: &quot;&quot;,
+                    &quot;phone&quot;: &quot;&quot;,
+                    &quot;portal_invite_last_sent_at&quot;: &quot;2023-10-03T14:39:59+10:00&quot;,
+                    &quot;portal_invite_last_accepted_at&quot;: null,
+                    &quot;verified&quot;: false,
+                    &quot;portal_customer_created_at&quot;: &quot;2023-10-03T14:39:59+10:00&quot;,
+                    &quot;vat_number&quot;: &quot;&quot;,
+                    &quot;cc_emails&quot;: &quot;&quot;,
+                    &quot;tax_exempt&quot;: false,
+                    &quot;parent_id&quot;: null,
+                    &quot;locale&quot;: null
+                },
+                &quot;product&quot;: {
+                    &quot;id&quot;: 6563729,
+                    &quot;name&quot;: &quot;Protect 10&quot;,
+                    &quot;handle&quot;: &quot;protect-10&quot;,
+                    &quot;description&quot;: &quot;&quot;,
+                    &quot;accounting_code&quot;: &quot;&quot;,
+                    &quot;request_credit_card&quot;: true,
+                    &quot;expiration_interval&quot;: 12,
+                    &quot;expiration_interval_unit&quot;: &quot;month&quot;,
+                    &quot;created_at&quot;: &quot;2023-09-27T14:29:34+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2023-09-27T15:16:13+10:00&quot;,
+                    &quot;price_in_cents&quot;: 77893,
+                    &quot;interval&quot;: 12,
+                    &quot;interval_unit&quot;: &quot;month&quot;,
+                    &quot;initial_charge_in_cents&quot;: null,
+                    &quot;trial_price_in_cents&quot;: null,
+                    &quot;trial_interval&quot;: null,
+                    &quot;trial_interval_unit&quot;: &quot;month&quot;,
+                    &quot;archived_at&quot;: null,
+                    &quot;require_credit_card&quot;: true,
+                    &quot;return_params&quot;: &quot;&quot;,
+                    &quot;taxable&quot;: false,
+                    &quot;update_return_url&quot;: &quot;&quot;,
+                    &quot;tax_code&quot;: &quot;&quot;,
+                    &quot;initial_charge_after_trial&quot;: false,
+                    &quot;version_number&quot;: 1,
+                    &quot;update_return_params&quot;: &quot;&quot;,
+                    &quot;default_product_price_point_id&quot;: 2481500,
+                    &quot;request_billing_address&quot;: false,
+                    &quot;require_billing_address&quot;: false,
+                    &quot;require_shipping_address&quot;: false,
+                    &quot;use_site_exchange_rate&quot;: true,
+                    &quot;item_category&quot;: null,
+                    &quot;product_price_point_id&quot;: 2481500,
+                    &quot;product_price_point_name&quot;: &quot;Original&quot;,
+                    &quot;product_price_point_handle&quot;: &quot;uuid:e67559c0-3f22-013c-92ff-06de0fa030d9&quot;,
+                    &quot;product_family&quot;: {
+                        &quot;id&quot;: 2588066,
+                        &quot;name&quot;: &quot;Protect&quot;,
+                        &quot;description&quot;: &quot;&quot;,
+                        &quot;handle&quot;: &quot;protect&quot;,
+                        &quot;accounting_code&quot;: null,
+                        &quot;created_at&quot;: &quot;2023-09-27T10:59:19+10:00&quot;,
+                        &quot;updated_at&quot;: &quot;2023-09-27T10:59:19+10:00&quot;
+                    },
+                    &quot;public_signup_pages&quot;: [
+                        {
+                            &quot;id&quot;: 490710,
+                            &quot;return_url&quot;: null,
+                            &quot;return_params&quot;: &quot;&quot;,
+                            &quot;url&quot;: &quot;https://changegps.chargifypay.com/subscribe/4rzkckwtm7z8/protect-10&quot;,
+                            &quot;enabled&quot;: true,
+                            &quot;nickname&quot;: null,
+                            &quot;currency&quot;: &quot;USD&quot;
+                        }
+                    ]
+                },
+                &quot;credit_card&quot;: {
+                    &quot;id&quot;: 53998726,
+                    &quot;first_name&quot;: &quot;Signe&quot;,
+                    &quot;last_name&quot;: &quot;Norris&quot;,
+                    &quot;masked_card_number&quot;: &quot;XXXX-XXXX-XXXX-8431&quot;,
+                    &quot;card_type&quot;: &quot;american_express&quot;,
+                    &quot;expiration_month&quot;: 12,
+                    &quot;expiration_year&quot;: 2024,
+                    &quot;customer_id&quot;: 71319462,
+                    &quot;current_vault&quot;: &quot;bogus&quot;,
+                    &quot;vault_token&quot;: &quot;1&quot;,
+                    &quot;billing_address&quot;: &quot;&quot;,
+                    &quot;billing_city&quot;: &quot;&quot;,
+                    &quot;billing_state&quot;: &quot;&quot;,
+                    &quot;billing_zip&quot;: &quot;&quot;,
+                    &quot;billing_country&quot;: &quot;&quot;,
+                    &quot;customer_vault_token&quot;: null,
+                    &quot;billing_address_2&quot;: &quot;&quot;,
+                    &quot;payment_type&quot;: &quot;credit_card&quot;,
+                    &quot;disabled&quot;: false,
+                    &quot;site_gateway_setting_id&quot;: null,
+                    &quot;gateway_handle&quot;: null
+                },
+                &quot;group&quot;: null
+            }
+        },
+        {
+            &quot;subscription&quot;: {
+                &quot;id&quot;: 55886375,
+                &quot;state&quot;: &quot;canceled&quot;,
+                &quot;trial_started_at&quot;: null,
+                &quot;trial_ended_at&quot;: null,
+                &quot;activated_at&quot;: &quot;2022-07-08T09:32:29+10:00&quot;,
+                &quot;created_at&quot;: &quot;2022-07-08T09:32:27+10:00&quot;,
+                &quot;updated_at&quot;: &quot;2023-01-08T18:43:49+10:00&quot;,
+                &quot;expires_at&quot;: &quot;2023-07-08T09:32:27+10:00&quot;,
+                &quot;balance_in_cents&quot;: 0,
+                &quot;current_period_ends_at&quot;: &quot;2023-02-08T09:32:27+10:00&quot;,
+                &quot;next_assessment_at&quot;: &quot;2023-02-08T09:32:27+10:00&quot;,
+                &quot;canceled_at&quot;: &quot;2023-01-08T18:43:49+10:00&quot;,
+                &quot;cancellation_message&quot;: &quot;Test site subscription lifetime exceeded on 01/08/2023&quot;,
+                &quot;next_product_id&quot;: null,
+                &quot;next_product_handle&quot;: null,
+                &quot;cancel_at_end_of_period&quot;: false,
+                &quot;payment_collection_method&quot;: &quot;automatic&quot;,
+                &quot;snap_day&quot;: null,
+                &quot;cancellation_method&quot;: &quot;unknown&quot;,
+                &quot;current_period_started_at&quot;: &quot;2023-01-08T09:32:27+10:00&quot;,
+                &quot;previous_state&quot;: &quot;active&quot;,
+                &quot;signup_payment_id&quot;: 688639790,
+                &quot;signup_revenue&quot;: &quot;600.00&quot;,
+                &quot;delayed_cancel_at&quot;: null,
+                &quot;coupon_code&quot;: null,
+                &quot;total_revenue_in_cents&quot;: 420000,
+                &quot;product_price_in_cents&quot;: 0,
+                &quot;product_version_number&quot;: 1,
+                &quot;payment_type&quot;: &quot;credit_card&quot;,
+                &quot;referral_code&quot;: null,
+                &quot;coupon_use_count&quot;: null,
+                &quot;coupon_uses_allowed&quot;: null,
+                &quot;reason_code&quot;: &quot;CH:Unknown&quot;,
+                &quot;automatically_resume_at&quot;: null,
+                &quot;coupon_codes&quot;: [],
+                &quot;offer_id&quot;: null,
+                &quot;payer_id&quot;: null,
+                &quot;receives_invoice_emails&quot;: null,
+                &quot;product_price_point_id&quot;: 1762426,
+                &quot;next_product_price_point_id&quot;: null,
+                &quot;credit_balance_in_cents&quot;: 0,
+                &quot;prepayment_balance_in_cents&quot;: 0,
+                &quot;net_terms&quot;: null,
+                &quot;stored_credential_transaction_id&quot;: null,
+                &quot;locale&quot;: null,
+                &quot;reference&quot;: null,
+                &quot;currency&quot;: &quot;USD&quot;,
+                &quot;on_hold_at&quot;: null,
+                &quot;scheduled_cancellation_at&quot;: null,
+                &quot;product_price_point_type&quot;: &quot;default&quot;,
+                &quot;dunning_communication_delay_enabled&quot;: false,
+                &quot;dunning_communication_delay_time_zone&quot;: null,
+                &quot;customer&quot;: {
+                    &quot;id&quot;: 56624286,
+                    &quot;first_name&quot;: &quot;Lizeth&quot;,
+                    &quot;last_name&quot;: &quot;Hand&quot;,
+                    &quot;organization&quot;: &quot;Flatley LLC&quot;,
+                    &quot;email&quot;: &quot;Yvette29@example.net&quot;,
+                    &quot;created_at&quot;: &quot;2022-07-08T09:31:52+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2022-07-08T09:32:29+10:00&quot;,
+                    &quot;reference&quot;: null,
+                    &quot;address&quot;: &quot;24400 Emmanuel Plain&quot;,
+                    &quot;address_2&quot;: &quot;Apt. 468&quot;,
+                    &quot;city&quot;: &quot;Lake Lexi&quot;,
+                    &quot;state&quot;: &quot;OK&quot;,
+                    &quot;state_name&quot;: &quot;Oklahoma&quot;,
+                    &quot;zip&quot;: &quot;58801&quot;,
+                    &quot;country&quot;: &quot;US&quot;,
+                    &quot;country_name&quot;: &quot;United States&quot;,
+                    &quot;phone&quot;: &quot;897-216-2650&quot;,
+                    &quot;portal_invite_last_sent_at&quot;: &quot;2022-07-08T09:32:29+10:00&quot;,
+                    &quot;portal_invite_last_accepted_at&quot;: null,
+                    &quot;verified&quot;: false,
+                    &quot;portal_customer_created_at&quot;: &quot;2022-07-08T09:32:29+10:00&quot;,
+                    &quot;vat_number&quot;: null,
+                    &quot;cc_emails&quot;: null,
+                    &quot;tax_exempt&quot;: false,
+                    &quot;parent_id&quot;: null,
+                    &quot;locale&quot;: null
+                },
+                &quot;product&quot;: {
+                    &quot;id&quot;: 5943865,
+                    &quot;name&quot;: &quot;Base Product&quot;,
+                    &quot;handle&quot;: null,
+                    &quot;description&quot;: &quot;&quot;,
+                    &quot;accounting_code&quot;: &quot;&quot;,
+                    &quot;request_credit_card&quot;: true,
+                    &quot;expiration_interval&quot;: 12,
+                    &quot;expiration_interval_unit&quot;: &quot;month&quot;,
+                    &quot;created_at&quot;: &quot;2022-03-25T12:51:20+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2022-04-22T09:31:32+10:00&quot;,
+                    &quot;price_in_cents&quot;: 0,
+                    &quot;interval&quot;: 1,
+                    &quot;interval_unit&quot;: &quot;month&quot;,
+                    &quot;initial_charge_in_cents&quot;: null,
+                    &quot;trial_price_in_cents&quot;: null,
+                    &quot;trial_interval&quot;: null,
+                    &quot;trial_interval_unit&quot;: &quot;month&quot;,
+                    &quot;archived_at&quot;: null,
+                    &quot;require_credit_card&quot;: false,
+                    &quot;return_params&quot;: &quot;&quot;,
+                    &quot;taxable&quot;: false,
+                    &quot;update_return_url&quot;: &quot;&quot;,
+                    &quot;tax_code&quot;: &quot;&quot;,
+                    &quot;initial_charge_after_trial&quot;: false,
+                    &quot;version_number&quot;: 1,
+                    &quot;update_return_params&quot;: &quot;&quot;,
+                    &quot;default_product_price_point_id&quot;: 1762426,
+                    &quot;request_billing_address&quot;: false,
+                    &quot;require_billing_address&quot;: false,
+                    &quot;require_shipping_address&quot;: false,
+                    &quot;use_site_exchange_rate&quot;: true,
+                    &quot;item_category&quot;: null,
+                    &quot;product_price_point_id&quot;: 1762426,
+                    &quot;product_price_point_name&quot;: &quot;Original&quot;,
+                    &quot;product_price_point_handle&quot;: &quot;uuid:5f811610-8e14-013a-aa93-0a77c508d567&quot;,
+                    &quot;product_family&quot;: {
+                        &quot;id&quot;: 2082792,
+                        &quot;name&quot;: &quot;Component Based Billing&quot;,
+                        &quot;description&quot;: &quot;&quot;,
+                        &quot;handle&quot;: &quot;component-based-billing&quot;,
+                        &quot;accounting_code&quot;: null,
+                        &quot;created_at&quot;: &quot;2022-03-23T11:02:46+10:00&quot;,
+                        &quot;updated_at&quot;: &quot;2022-04-22T09:36:07+10:00&quot;
+                    },
+                    &quot;public_signup_pages&quot;: [
+                        {
+                            &quot;id&quot;: 462519,
+                            &quot;return_url&quot;: null,
+                            &quot;return_params&quot;: &quot;&quot;,
+                            &quot;url&quot;: &quot;https://changegps.chargifypay.com/subscribe/wx6zq4q3jc2z&quot;,
+                            &quot;enabled&quot;: true,
+                            &quot;nickname&quot;: null,
+                            &quot;currency&quot;: &quot;USD&quot;
+                        }
+                    ]
+                },
+                &quot;credit_card&quot;: {
+                    &quot;id&quot;: 37861115,
+                    &quot;first_name&quot;: &quot;Shemar&quot;,
+                    &quot;last_name&quot;: &quot;Lehner&quot;,
+                    &quot;masked_card_number&quot;: &quot;XXXX-XXXX-XXXX-1&quot;,
+                    &quot;card_type&quot;: &quot;bogus&quot;,
+                    &quot;expiration_month&quot;: 7,
+                    &quot;expiration_year&quot;: 2023,
+                    &quot;customer_id&quot;: 56624286,
+                    &quot;current_vault&quot;: &quot;bogus&quot;,
+                    &quot;vault_token&quot;: &quot;1&quot;,
+                    &quot;billing_address&quot;: &quot;735 Lowe Field&quot;,
+                    &quot;billing_city&quot;: &quot;South Randalview&quot;,
+                    &quot;billing_state&quot;: &quot;CT&quot;,
+                    &quot;billing_zip&quot;: &quot;51920-6882&quot;,
+                    &quot;billing_country&quot;: &quot;US&quot;,
+                    &quot;customer_vault_token&quot;: null,
+                    &quot;billing_address_2&quot;: &quot;Suite 673&quot;,
+                    &quot;payment_type&quot;: &quot;credit_card&quot;,
+                    &quot;disabled&quot;: false,
+                    &quot;site_gateway_setting_id&quot;: null,
+                    &quot;gateway_handle&quot;: null
+                },
+                &quot;group&quot;: null
+            }
+        },
+        {
+            &quot;subscription&quot;: {
+                &quot;id&quot;: 53743071,
+                &quot;state&quot;: &quot;canceled&quot;,
+                &quot;trial_started_at&quot;: null,
+                &quot;trial_ended_at&quot;: null,
+                &quot;activated_at&quot;: &quot;2022-04-22T09:46:59+10:00&quot;,
+                &quot;created_at&quot;: &quot;2022-04-22T09:46:58+10:00&quot;,
+                &quot;updated_at&quot;: &quot;2022-10-22T18:41:03+10:00&quot;,
+                &quot;expires_at&quot;: null,
+                &quot;balance_in_cents&quot;: 0,
+                &quot;current_period_ends_at&quot;: &quot;2022-11-22T09:46:58+10:00&quot;,
+                &quot;next_assessment_at&quot;: &quot;2022-11-22T09:46:58+10:00&quot;,
+                &quot;canceled_at&quot;: &quot;2022-10-22T18:41:03+10:00&quot;,
+                &quot;cancellation_message&quot;: &quot;Test site subscription lifetime exceeded on 10/22/2022&quot;,
+                &quot;next_product_id&quot;: null,
+                &quot;next_product_handle&quot;: null,
+                &quot;cancel_at_end_of_period&quot;: false,
+                &quot;payment_collection_method&quot;: &quot;automatic&quot;,
+                &quot;snap_day&quot;: null,
+                &quot;cancellation_method&quot;: &quot;unknown&quot;,
+                &quot;current_period_started_at&quot;: &quot;2022-10-22T09:46:58+10:00&quot;,
+                &quot;previous_state&quot;: &quot;active&quot;,
+                &quot;signup_payment_id&quot;: 648938995,
+                &quot;signup_revenue&quot;: &quot;1530.00&quot;,
+                &quot;delayed_cancel_at&quot;: null,
+                &quot;coupon_code&quot;: null,
+                &quot;total_revenue_in_cents&quot;: 1785000,
+                &quot;product_price_in_cents&quot;: 0,
+                &quot;product_version_number&quot;: 1,
+                &quot;payment_type&quot;: &quot;credit_card&quot;,
+                &quot;referral_code&quot;: null,
+                &quot;coupon_use_count&quot;: null,
+                &quot;coupon_uses_allowed&quot;: null,
+                &quot;reason_code&quot;: &quot;CH:Unknown&quot;,
+                &quot;automatically_resume_at&quot;: null,
+                &quot;coupon_codes&quot;: [],
+                &quot;offer_id&quot;: null,
+                &quot;payer_id&quot;: null,
+                &quot;receives_invoice_emails&quot;: null,
+                &quot;product_price_point_id&quot;: 1779509,
+                &quot;next_product_price_point_id&quot;: null,
+                &quot;credit_balance_in_cents&quot;: 0,
+                &quot;prepayment_balance_in_cents&quot;: 0,
+                &quot;net_terms&quot;: null,
+                &quot;stored_credential_transaction_id&quot;: null,
+                &quot;locale&quot;: null,
+                &quot;reference&quot;: null,
+                &quot;currency&quot;: &quot;USD&quot;,
+                &quot;on_hold_at&quot;: null,
+                &quot;scheduled_cancellation_at&quot;: null,
+                &quot;product_price_point_type&quot;: &quot;default&quot;,
+                &quot;dunning_communication_delay_enabled&quot;: false,
+                &quot;dunning_communication_delay_time_zone&quot;: null,
+                &quot;customer&quot;: {
+                    &quot;id&quot;: 54462226,
+                    &quot;first_name&quot;: &quot;Meta&quot;,
+                    &quot;last_name&quot;: &quot;Predovic&quot;,
+                    &quot;organization&quot;: &quot;Upton - Stroman&quot;,
+                    &quot;email&quot;: &quot;Gabe_Schmeler@example.org&quot;,
+                    &quot;created_at&quot;: &quot;2022-04-22T09:46:44+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2022-04-22T09:46:59+10:00&quot;,
+                    &quot;reference&quot;: null,
+                    &quot;address&quot;: &quot;608 Trevion Burgs&quot;,
+                    &quot;address_2&quot;: &quot;Suite 351&quot;,
+                    &quot;city&quot;: &quot;New Antoinette&quot;,
+                    &quot;state&quot;: &quot;CO&quot;,
+                    &quot;state_name&quot;: &quot;Colorado&quot;,
+                    &quot;zip&quot;: &quot;88214-8731&quot;,
+                    &quot;country&quot;: &quot;US&quot;,
+                    &quot;country_name&quot;: &quot;United States&quot;,
+                    &quot;phone&quot;: &quot;484-356-8031&quot;,
+                    &quot;portal_invite_last_sent_at&quot;: &quot;2022-04-22T09:46:59+10:00&quot;,
+                    &quot;portal_invite_last_accepted_at&quot;: null,
+                    &quot;verified&quot;: false,
+                    &quot;portal_customer_created_at&quot;: &quot;2022-04-22T09:46:59+10:00&quot;,
+                    &quot;vat_number&quot;: null,
+                    &quot;cc_emails&quot;: null,
+                    &quot;tax_exempt&quot;: false,
+                    &quot;parent_id&quot;: null,
+                    &quot;locale&quot;: null
+                },
+                &quot;product&quot;: {
+                    &quot;id&quot;: 5960037,
+                    &quot;name&quot;: &quot;ENTERPRISE&quot;,
+                    &quot;handle&quot;: &quot;enterprise&quot;,
+                    &quot;description&quot;: &quot;&quot;,
+                    &quot;accounting_code&quot;: &quot;&quot;,
+                    &quot;request_credit_card&quot;: true,
+                    &quot;expiration_interval&quot;: null,
+                    &quot;expiration_interval_unit&quot;: &quot;never&quot;,
+                    &quot;created_at&quot;: &quot;2022-04-07T07:12:28+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2022-04-08T09:35:42+10:00&quot;,
+                    &quot;price_in_cents&quot;: 0,
+                    &quot;interval&quot;: 1,
+                    &quot;interval_unit&quot;: &quot;month&quot;,
+                    &quot;initial_charge_in_cents&quot;: null,
+                    &quot;trial_price_in_cents&quot;: null,
+                    &quot;trial_interval&quot;: null,
+                    &quot;trial_interval_unit&quot;: &quot;month&quot;,
+                    &quot;archived_at&quot;: null,
+                    &quot;require_credit_card&quot;: false,
+                    &quot;return_params&quot;: &quot;&quot;,
+                    &quot;taxable&quot;: false,
+                    &quot;update_return_url&quot;: &quot;&quot;,
+                    &quot;tax_code&quot;: &quot;&quot;,
+                    &quot;initial_charge_after_trial&quot;: false,
+                    &quot;version_number&quot;: 1,
+                    &quot;update_return_params&quot;: &quot;&quot;,
+                    &quot;default_product_price_point_id&quot;: 1779509,
+                    &quot;request_billing_address&quot;: false,
+                    &quot;require_billing_address&quot;: false,
+                    &quot;require_shipping_address&quot;: false,
+                    &quot;use_site_exchange_rate&quot;: true,
+                    &quot;item_category&quot;: null,
+                    &quot;product_price_point_id&quot;: 1779509,
+                    &quot;product_price_point_name&quot;: &quot;Original&quot;,
+                    &quot;product_price_point_handle&quot;: &quot;uuid:302e5650-981c-013a-8c94-064220a75327&quot;,
+                    &quot;product_family&quot;: {
+                        &quot;id&quot;: 2096589,
+                        &quot;name&quot;: &quot;Core Plans&quot;,
+                        &quot;description&quot;: &quot;&quot;,
+                        &quot;handle&quot;: &quot;core-plans&quot;,
+                        &quot;accounting_code&quot;: null,
+                        &quot;created_at&quot;: &quot;2022-04-07T07:02:05+10:00&quot;,
+                        &quot;updated_at&quot;: &quot;2022-04-07T07:08:33+10:00&quot;
+                    },
+                    &quot;public_signup_pages&quot;: [
+                        {
+                            &quot;id&quot;: 463317,
+                            &quot;return_url&quot;: &quot;&quot;,
+                            &quot;return_params&quot;: &quot;&quot;,
+                            &quot;url&quot;: &quot;https://changegps.chargifypay.com/subscribe/njprqpd5szmz/enterprise&quot;,
+                            &quot;enabled&quot;: true,
+                            &quot;nickname&quot;: &quot;&quot;,
+                            &quot;currency&quot;: &quot;USD&quot;
+                        }
+                    ]
+                },
+                &quot;credit_card&quot;: {
+                    &quot;id&quot;: 36567536,
+                    &quot;first_name&quot;: &quot;Alycia&quot;,
+                    &quot;last_name&quot;: &quot;Prohaska&quot;,
+                    &quot;masked_card_number&quot;: &quot;XXXX-XXXX-XXXX-1&quot;,
+                    &quot;card_type&quot;: &quot;bogus&quot;,
+                    &quot;expiration_month&quot;: 4,
+                    &quot;expiration_year&quot;: 2023,
+                    &quot;customer_id&quot;: 54462226,
+                    &quot;current_vault&quot;: &quot;bogus&quot;,
+                    &quot;vault_token&quot;: &quot;1&quot;,
+                    &quot;billing_address&quot;: &quot;9505 Hester Trace&quot;,
+                    &quot;billing_city&quot;: &quot;Port Colleen&quot;,
+                    &quot;billing_state&quot;: &quot;WA&quot;,
+                    &quot;billing_zip&quot;: &quot;89874-6508&quot;,
+                    &quot;billing_country&quot;: &quot;US&quot;,
+                    &quot;customer_vault_token&quot;: null,
+                    &quot;billing_address_2&quot;: &quot;Apt. 290&quot;,
+                    &quot;payment_type&quot;: &quot;credit_card&quot;,
+                    &quot;disabled&quot;: false,
+                    &quot;site_gateway_setting_id&quot;: null,
+                    &quot;gateway_handle&quot;: null
+                },
+                &quot;group&quot;: null
+            }
+        },
+        {
+            &quot;subscription&quot;: {
+                &quot;id&quot;: 53742971,
+                &quot;state&quot;: &quot;canceled&quot;,
+                &quot;trial_started_at&quot;: null,
+                &quot;trial_ended_at&quot;: null,
+                &quot;activated_at&quot;: &quot;2022-04-22T09:39:39+10:00&quot;,
+                &quot;created_at&quot;: &quot;2022-04-22T09:39:37+10:00&quot;,
+                &quot;updated_at&quot;: &quot;2022-10-22T18:41:02+10:00&quot;,
+                &quot;expires_at&quot;: &quot;2023-04-22T09:39:37+10:00&quot;,
+                &quot;balance_in_cents&quot;: 0,
+                &quot;current_period_ends_at&quot;: &quot;2022-11-22T09:39:37+10:00&quot;,
+                &quot;next_assessment_at&quot;: &quot;2022-11-22T09:39:37+10:00&quot;,
+                &quot;canceled_at&quot;: &quot;2022-10-22T18:41:02+10:00&quot;,
+                &quot;cancellation_message&quot;: &quot;Test site subscription lifetime exceeded on 10/22/2022&quot;,
+                &quot;next_product_id&quot;: null,
+                &quot;next_product_handle&quot;: null,
+                &quot;cancel_at_end_of_period&quot;: false,
+                &quot;payment_collection_method&quot;: &quot;automatic&quot;,
+                &quot;snap_day&quot;: null,
+                &quot;cancellation_method&quot;: &quot;unknown&quot;,
+                &quot;current_period_started_at&quot;: &quot;2022-10-22T09:39:37+10:00&quot;,
+                &quot;previous_state&quot;: &quot;active&quot;,
+                &quot;signup_payment_id&quot;: 648934381,
+                &quot;signup_revenue&quot;: &quot;813.82&quot;,
+                &quot;delayed_cancel_at&quot;: null,
+                &quot;coupon_code&quot;: null,
+                &quot;total_revenue_in_cents&quot;: 203891,
+                &quot;product_price_in_cents&quot;: 0,
+                &quot;product_version_number&quot;: 1,
+                &quot;payment_type&quot;: &quot;credit_card&quot;,
+                &quot;referral_code&quot;: null,
+                &quot;coupon_use_count&quot;: null,
+                &quot;coupon_uses_allowed&quot;: null,
+                &quot;reason_code&quot;: &quot;CH:Unknown&quot;,
+                &quot;automatically_resume_at&quot;: null,
+                &quot;coupon_codes&quot;: [],
+                &quot;offer_id&quot;: null,
+                &quot;payer_id&quot;: null,
+                &quot;receives_invoice_emails&quot;: null,
+                &quot;product_price_point_id&quot;: 1762426,
+                &quot;next_product_price_point_id&quot;: null,
+                &quot;credit_balance_in_cents&quot;: 0,
+                &quot;prepayment_balance_in_cents&quot;: 0,
+                &quot;net_terms&quot;: null,
+                &quot;stored_credential_transaction_id&quot;: null,
+                &quot;locale&quot;: null,
+                &quot;reference&quot;: null,
+                &quot;currency&quot;: &quot;AUD&quot;,
+                &quot;on_hold_at&quot;: null,
+                &quot;scheduled_cancellation_at&quot;: null,
+                &quot;product_price_point_type&quot;: &quot;default&quot;,
+                &quot;dunning_communication_delay_enabled&quot;: false,
+                &quot;dunning_communication_delay_time_zone&quot;: null,
+                &quot;customer&quot;: {
+                    &quot;id&quot;: 54073068,
+                    &quot;first_name&quot;: &quot;Adele&quot;,
+                    &quot;last_name&quot;: &quot;Corkery&quot;,
+                    &quot;organization&quot;: &quot;Kreiger - Kuhlman&quot;,
+                    &quot;email&quot;: &quot;Dariana52@example.com&quot;,
+                    &quot;created_at&quot;: &quot;2022-04-08T09:29:21+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2022-04-22T09:39:39+10:00&quot;,
+                    &quot;reference&quot;: null,
+                    &quot;address&quot;: &quot;493 Hessel Forest&quot;,
+                    &quot;address_2&quot;: &quot;Suite 649&quot;,
+                    &quot;city&quot;: &quot;Stehrberg&quot;,
+                    &quot;state&quot;: &quot;AL&quot;,
+                    &quot;state_name&quot;: &quot;Alabama&quot;,
+                    &quot;zip&quot;: &quot;04253-1183&quot;,
+                    &quot;country&quot;: &quot;US&quot;,
+                    &quot;country_name&quot;: &quot;United States&quot;,
+                    &quot;phone&quot;: &quot;550-496-2204&quot;,
+                    &quot;portal_invite_last_sent_at&quot;: &quot;2022-04-22T09:39:39+10:00&quot;,
+                    &quot;portal_invite_last_accepted_at&quot;: null,
+                    &quot;verified&quot;: false,
+                    &quot;portal_customer_created_at&quot;: &quot;2022-04-08T09:29:54+10:00&quot;,
+                    &quot;vat_number&quot;: null,
+                    &quot;cc_emails&quot;: null,
+                    &quot;tax_exempt&quot;: false,
+                    &quot;parent_id&quot;: null,
+                    &quot;locale&quot;: null
+                },
+                &quot;product&quot;: {
+                    &quot;id&quot;: 5943865,
+                    &quot;name&quot;: &quot;Base Product&quot;,
+                    &quot;handle&quot;: null,
+                    &quot;description&quot;: &quot;&quot;,
+                    &quot;accounting_code&quot;: &quot;&quot;,
+                    &quot;request_credit_card&quot;: true,
+                    &quot;expiration_interval&quot;: 12,
+                    &quot;expiration_interval_unit&quot;: &quot;month&quot;,
+                    &quot;created_at&quot;: &quot;2022-03-25T12:51:20+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2022-04-22T09:31:32+10:00&quot;,
+                    &quot;price_in_cents&quot;: 0,
+                    &quot;interval&quot;: 1,
+                    &quot;interval_unit&quot;: &quot;month&quot;,
+                    &quot;initial_charge_in_cents&quot;: null,
+                    &quot;trial_price_in_cents&quot;: null,
+                    &quot;trial_interval&quot;: null,
+                    &quot;trial_interval_unit&quot;: &quot;month&quot;,
+                    &quot;archived_at&quot;: null,
+                    &quot;require_credit_card&quot;: false,
+                    &quot;return_params&quot;: &quot;&quot;,
+                    &quot;taxable&quot;: false,
+                    &quot;update_return_url&quot;: &quot;&quot;,
+                    &quot;tax_code&quot;: &quot;&quot;,
+                    &quot;initial_charge_after_trial&quot;: false,
+                    &quot;version_number&quot;: 1,
+                    &quot;update_return_params&quot;: &quot;&quot;,
+                    &quot;default_product_price_point_id&quot;: 1762426,
+                    &quot;request_billing_address&quot;: false,
+                    &quot;require_billing_address&quot;: false,
+                    &quot;require_shipping_address&quot;: false,
+                    &quot;use_site_exchange_rate&quot;: true,
+                    &quot;item_category&quot;: null,
+                    &quot;product_price_point_id&quot;: 1762426,
+                    &quot;product_price_point_name&quot;: &quot;Original&quot;,
+                    &quot;product_price_point_handle&quot;: &quot;uuid:5f811610-8e14-013a-aa93-0a77c508d567&quot;,
+                    &quot;product_family&quot;: {
+                        &quot;id&quot;: 2082792,
+                        &quot;name&quot;: &quot;Component Based Billing&quot;,
+                        &quot;description&quot;: &quot;&quot;,
+                        &quot;handle&quot;: &quot;component-based-billing&quot;,
+                        &quot;accounting_code&quot;: null,
+                        &quot;created_at&quot;: &quot;2022-03-23T11:02:46+10:00&quot;,
+                        &quot;updated_at&quot;: &quot;2022-04-22T09:36:07+10:00&quot;
+                    },
+                    &quot;public_signup_pages&quot;: [
+                        {
+                            &quot;id&quot;: 462519,
+                            &quot;return_url&quot;: null,
+                            &quot;return_params&quot;: &quot;&quot;,
+                            &quot;url&quot;: &quot;https://changegps.chargifypay.com/subscribe/wx6zq4q3jc2z&quot;,
+                            &quot;enabled&quot;: true,
+                            &quot;nickname&quot;: null,
+                            &quot;currency&quot;: &quot;USD&quot;
+                        }
+                    ]
+                },
+                &quot;credit_card&quot;: {
+                    &quot;id&quot;: 36567453,
+                    &quot;first_name&quot;: &quot;Ole&quot;,
+                    &quot;last_name&quot;: &quot;Harvey&quot;,
+                    &quot;masked_card_number&quot;: &quot;XXXX-XXXX-XXXX-1&quot;,
+                    &quot;card_type&quot;: &quot;bogus&quot;,
+                    &quot;expiration_month&quot;: 4,
+                    &quot;expiration_year&quot;: 2023,
+                    &quot;customer_id&quot;: 54073068,
+                    &quot;current_vault&quot;: &quot;bogus&quot;,
+                    &quot;vault_token&quot;: &quot;1&quot;,
+                    &quot;billing_address&quot;: &quot;28225 Bianka Pass&quot;,
+                    &quot;billing_city&quot;: &quot;Carlottafort&quot;,
+                    &quot;billing_state&quot;: &quot;ND&quot;,
+                    &quot;billing_zip&quot;: &quot;02171&quot;,
+                    &quot;billing_country&quot;: &quot;US&quot;,
+                    &quot;customer_vault_token&quot;: null,
+                    &quot;billing_address_2&quot;: &quot;Apt. 244&quot;,
+                    &quot;payment_type&quot;: &quot;credit_card&quot;,
+                    &quot;disabled&quot;: false,
+                    &quot;site_gateway_setting_id&quot;: null,
+                    &quot;gateway_handle&quot;: null
+                },
+                &quot;group&quot;: null
+            }
+        },
+        {
+            &quot;subscription&quot;: {
+                &quot;id&quot;: 53389942,
+                &quot;state&quot;: &quot;canceled&quot;,
+                &quot;trial_started_at&quot;: null,
+                &quot;trial_ended_at&quot;: null,
+                &quot;activated_at&quot;: &quot;2022-04-08T09:29:54+10:00&quot;,
+                &quot;created_at&quot;: &quot;2022-04-08T09:29:53+10:00&quot;,
+                &quot;updated_at&quot;: &quot;2022-10-08T18:40:14+10:00&quot;,
+                &quot;expires_at&quot;: null,
+                &quot;balance_in_cents&quot;: 203000,
+                &quot;current_period_ends_at&quot;: &quot;2022-11-08T09:29:53+10:00&quot;,
+                &quot;next_assessment_at&quot;: &quot;2022-11-08T09:29:53+10:00&quot;,
+                &quot;canceled_at&quot;: &quot;2022-10-08T18:40:14+10:00&quot;,
+                &quot;cancellation_message&quot;: &quot;Test site subscription lifetime exceeded on 10/08/2022&quot;,
+                &quot;next_product_id&quot;: null,
+                &quot;next_product_handle&quot;: null,
+                &quot;cancel_at_end_of_period&quot;: false,
+                &quot;payment_collection_method&quot;: &quot;remittance&quot;,
+                &quot;snap_day&quot;: null,
+                &quot;cancellation_method&quot;: &quot;unknown&quot;,
+                &quot;current_period_started_at&quot;: &quot;2022-10-08T09:29:53+10:00&quot;,
+                &quot;previous_state&quot;: &quot;active&quot;,
+                &quot;signup_payment_id&quot;: 642820966,
+                &quot;signup_revenue&quot;: &quot;0.00&quot;,
+                &quot;delayed_cancel_at&quot;: null,
+                &quot;coupon_code&quot;: null,
+                &quot;total_revenue_in_cents&quot;: 0,
+                &quot;product_price_in_cents&quot;: 29000,
+                &quot;product_version_number&quot;: 1,
+                &quot;payment_type&quot;: null,
+                &quot;referral_code&quot;: null,
+                &quot;coupon_use_count&quot;: null,
+                &quot;coupon_uses_allowed&quot;: null,
+                &quot;reason_code&quot;: &quot;CH:Unknown&quot;,
+                &quot;automatically_resume_at&quot;: null,
+                &quot;coupon_codes&quot;: [],
+                &quot;offer_id&quot;: null,
+                &quot;payer_id&quot;: null,
+                &quot;receives_invoice_emails&quot;: null,
+                &quot;product_price_point_id&quot;: 1779507,
+                &quot;next_product_price_point_id&quot;: null,
+                &quot;credit_balance_in_cents&quot;: 0,
+                &quot;prepayment_balance_in_cents&quot;: 0,
+                &quot;net_terms&quot;: null,
+                &quot;stored_credential_transaction_id&quot;: null,
+                &quot;locale&quot;: null,
+                &quot;reference&quot;: null,
+                &quot;currency&quot;: &quot;USD&quot;,
+                &quot;on_hold_at&quot;: null,
+                &quot;scheduled_cancellation_at&quot;: null,
+                &quot;product_price_point_type&quot;: &quot;default&quot;,
+                &quot;dunning_communication_delay_enabled&quot;: false,
+                &quot;dunning_communication_delay_time_zone&quot;: null,
+                &quot;customer&quot;: {
+                    &quot;id&quot;: 54073068,
+                    &quot;first_name&quot;: &quot;Adele&quot;,
+                    &quot;last_name&quot;: &quot;Corkery&quot;,
+                    &quot;organization&quot;: &quot;Kreiger - Kuhlman&quot;,
+                    &quot;email&quot;: &quot;Dariana52@example.com&quot;,
+                    &quot;created_at&quot;: &quot;2022-04-08T09:29:21+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2022-04-22T09:39:39+10:00&quot;,
+                    &quot;reference&quot;: null,
+                    &quot;address&quot;: &quot;493 Hessel Forest&quot;,
+                    &quot;address_2&quot;: &quot;Suite 649&quot;,
+                    &quot;city&quot;: &quot;Stehrberg&quot;,
+                    &quot;state&quot;: &quot;AL&quot;,
+                    &quot;state_name&quot;: &quot;Alabama&quot;,
+                    &quot;zip&quot;: &quot;04253-1183&quot;,
+                    &quot;country&quot;: &quot;US&quot;,
+                    &quot;country_name&quot;: &quot;United States&quot;,
+                    &quot;phone&quot;: &quot;550-496-2204&quot;,
+                    &quot;portal_invite_last_sent_at&quot;: &quot;2022-04-22T09:39:39+10:00&quot;,
+                    &quot;portal_invite_last_accepted_at&quot;: null,
+                    &quot;verified&quot;: false,
+                    &quot;portal_customer_created_at&quot;: &quot;2022-04-08T09:29:54+10:00&quot;,
+                    &quot;vat_number&quot;: null,
+                    &quot;cc_emails&quot;: null,
+                    &quot;tax_exempt&quot;: false,
+                    &quot;parent_id&quot;: null,
+                    &quot;locale&quot;: null
+                },
+                &quot;product&quot;: {
+                    &quot;id&quot;: 5960035,
+                    &quot;name&quot;: &quot;LITE&quot;,
+                    &quot;handle&quot;: &quot;lite&quot;,
+                    &quot;description&quot;: &quot;&quot;,
+                    &quot;accounting_code&quot;: &quot;&quot;,
+                    &quot;request_credit_card&quot;: true,
+                    &quot;expiration_interval&quot;: null,
+                    &quot;expiration_interval_unit&quot;: &quot;never&quot;,
+                    &quot;created_at&quot;: &quot;2022-04-07T07:11:15+10:00&quot;,
+                    &quot;updated_at&quot;: &quot;2022-04-08T09:27:57+10:00&quot;,
+                    &quot;price_in_cents&quot;: 29000,
+                    &quot;interval&quot;: 1,
+                    &quot;interval_unit&quot;: &quot;month&quot;,
+                    &quot;initial_charge_in_cents&quot;: null,
+                    &quot;trial_price_in_cents&quot;: null,
+                    &quot;trial_interval&quot;: null,
+                    &quot;trial_interval_unit&quot;: &quot;month&quot;,
+                    &quot;archived_at&quot;: null,
+                    &quot;require_credit_card&quot;: false,
+                    &quot;return_params&quot;: &quot;&quot;,
+                    &quot;taxable&quot;: false,
+                    &quot;update_return_url&quot;: &quot;&quot;,
+                    &quot;tax_code&quot;: &quot;&quot;,
+                    &quot;initial_charge_after_trial&quot;: false,
+                    &quot;version_number&quot;: 1,
+                    &quot;update_return_params&quot;: &quot;&quot;,
+                    &quot;default_product_price_point_id&quot;: 1779507,
+                    &quot;request_billing_address&quot;: false,
+                    &quot;require_billing_address&quot;: false,
+                    &quot;require_shipping_address&quot;: false,
+                    &quot;use_site_exchange_rate&quot;: true,
+                    &quot;item_category&quot;: null,
+                    &quot;product_price_point_id&quot;: 1779507,
+                    &quot;product_price_point_name&quot;: &quot;Original&quot;,
+                    &quot;product_price_point_handle&quot;: &quot;uuid:04c4ea10-981c-013a-ee55-022d46962219&quot;,
+                    &quot;product_family&quot;: {
+                        &quot;id&quot;: 2096589,
+                        &quot;name&quot;: &quot;Core Plans&quot;,
+                        &quot;description&quot;: &quot;&quot;,
+                        &quot;handle&quot;: &quot;core-plans&quot;,
+                        &quot;accounting_code&quot;: null,
+                        &quot;created_at&quot;: &quot;2022-04-07T07:02:05+10:00&quot;,
+                        &quot;updated_at&quot;: &quot;2022-04-07T07:08:33+10:00&quot;
+                    },
+                    &quot;public_signup_pages&quot;: [
+                        {
+                            &quot;id&quot;: 463316,
+                            &quot;return_url&quot;: &quot;&quot;,
+                            &quot;return_params&quot;: &quot;&quot;,
+                            &quot;url&quot;: &quot;https://changegps.chargifypay.com/subscribe/qd3y8b9vtbvp/lite&quot;,
+                            &quot;enabled&quot;: true,
+                            &quot;nickname&quot;: &quot;&quot;,
+                            &quot;currency&quot;: &quot;USD&quot;
+                        }
+                    ]
+                },
+                &quot;group&quot;: null
+            }
+        }
+    ],
+    &quot;message&quot;: &quot;Subscription List retrieved successfully.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-maxio-subscriptions" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-maxio-subscriptions"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-maxio-subscriptions"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-maxio-subscriptions" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-maxio-subscriptions">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-maxio-subscriptions" data-method="GET"
+      data-path="api/maxio/subscriptions"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-maxio-subscriptions', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-maxio-subscriptions"
+                    onclick="tryItOut('GETapi-maxio-subscriptions');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-maxio-subscriptions"
+                    onclick="cancelTryOut('GETapi-maxio-subscriptions');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-maxio-subscriptions"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/maxio/subscriptions</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-maxio-subscriptions"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-maxio-subscriptions"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="subscriptions-GETapi-maxio-subscriptions--id-">Display details of a Subscription</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-maxio-subscriptions--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://maxio-api.local/api/maxio/subscriptions/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://maxio-api.local/api/maxio/subscriptions/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-maxio-subscriptions--id-">
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 58
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-maxio-subscriptions--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-maxio-subscriptions--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-maxio-subscriptions--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-maxio-subscriptions--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-maxio-subscriptions--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-maxio-subscriptions--id-" data-method="GET"
+      data-path="api/maxio/subscriptions/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-maxio-subscriptions--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-maxio-subscriptions--id-"
+                    onclick="tryItOut('GETapi-maxio-subscriptions--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-maxio-subscriptions--id-"
+                    onclick="cancelTryOut('GETapi-maxio-subscriptions--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-maxio-subscriptions--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/maxio/subscriptions/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-maxio-subscriptions--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-maxio-subscriptions--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="GETapi-maxio-subscriptions--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>. Example: <code>1</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="subscriptions-POSTapi-maxio-subscriptions">Create or Store Subscription</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-maxio-subscriptions">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://maxio-api.local/api/maxio/subscriptions" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"subscription\": {
+        \"product_handle\": \"repudiandae\",
+        \"customer_attributes\": {
+            \"first_name\": \"ratione\",
+            \"last_name\": \"dolor\",
+            \"email\": \"elinor.boehm@example.com\",
+            \"zip\": 19,
+            \"state\": \"qui\",
+            \"reference\": \"dolorem\",
+            \"phone\": \"hic\",
+            \"organization\": \"facilis\",
+            \"country\": \"odit\",
+            \"city\": \"quia\",
+            \"address_2\": \"quam\",
+            \"address\": \"odio\"
+        },
+        \"credit_card_attributes\": {
+            \"last_name\": \"qui\",
+            \"first_name\": \"est\",
+            \"full_number\": 11,
+            \"expiration_year\": 14,
+            \"expiration_month\": 8,
+            \"card_type\": \"fuga\",
+            \"billing_zip\": 18,
+            \"billing_state\": \"corrupti\",
+            \"billing_country\": \"ullam\",
+            \"billing_city\": \"ut\",
+            \"billing_address_2\": \"exercitationem\",
+            \"billing_address\": \"ut\",
+            \"cvv\": 7
+        }
+    }
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://maxio-api.local/api/maxio/subscriptions"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "subscription": {
+        "product_handle": "repudiandae",
+        "customer_attributes": {
+            "first_name": "ratione",
+            "last_name": "dolor",
+            "email": "elinor.boehm@example.com",
+            "zip": 19,
+            "state": "qui",
+            "reference": "dolorem",
+            "phone": "hic",
+            "organization": "facilis",
+            "country": "odit",
+            "city": "quia",
+            "address_2": "quam",
+            "address": "odio"
+        },
+        "credit_card_attributes": {
+            "last_name": "qui",
+            "first_name": "est",
+            "full_number": 11,
+            "expiration_year": 14,
+            "expiration_month": 8,
+            "card_type": "fuga",
+            "billing_zip": 18,
+            "billing_state": "corrupti",
+            "billing_country": "ullam",
+            "billing_city": "ut",
+            "billing_address_2": "exercitationem",
+            "billing_address": "ut",
+            "cvv": 7
+        }
+    }
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-maxio-subscriptions">
+</span>
+<span id="execution-results-POSTapi-maxio-subscriptions" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-maxio-subscriptions"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-maxio-subscriptions"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-maxio-subscriptions" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-maxio-subscriptions">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-maxio-subscriptions" data-method="POST"
+      data-path="api/maxio/subscriptions"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-maxio-subscriptions', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-maxio-subscriptions"
+                    onclick="tryItOut('POSTapi-maxio-subscriptions');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-maxio-subscriptions"
+                    onclick="cancelTryOut('POSTapi-maxio-subscriptions');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-maxio-subscriptions"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/maxio/subscriptions</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>subscription</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+ &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>product_handle</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="subscription.product_handle"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="repudiandae"
+               data-component="body">
+    <br>
+<p>Example: <code>repudiandae</code></p>
+                    </div>
+                                                                <div style=" margin-left: 14px; clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>customer_attributes</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+ &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>first_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="subscription.customer_attributes.first_name"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="ratione"
+               data-component="body">
+    <br>
+<p>Example: <code>ratione</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="subscription.customer_attributes.last_name"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="dolor"
+               data-component="body">
+    <br>
+<p>Example: <code>dolor</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="subscription.customer_attributes.email"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="elinor.boehm@example.com"
+               data-component="body">
+    <br>
+<p>Must be a valid email address. Example: <code>elinor.boehm@example.com</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>zip</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="subscription.customer_attributes.zip"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="19"
+               data-component="body">
+    <br>
+<p>Example: <code>19</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>state</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="subscription.customer_attributes.state"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="qui"
+               data-component="body">
+    <br>
+<p>Example: <code>qui</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>reference</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="subscription.customer_attributes.reference"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="dolorem"
+               data-component="body">
+    <br>
+<p>Example: <code>dolorem</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>phone</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="subscription.customer_attributes.phone"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="hic"
+               data-component="body">
+    <br>
+<p>Example: <code>hic</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>organization</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="subscription.customer_attributes.organization"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="facilis"
+               data-component="body">
+    <br>
+<p>Example: <code>facilis</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>country</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="subscription.customer_attributes.country"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="odit"
+               data-component="body">
+    <br>
+<p>Example: <code>odit</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>city</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="subscription.customer_attributes.city"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="quia"
+               data-component="body">
+    <br>
+<p>Example: <code>quia</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>address_2</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="subscription.customer_attributes.address_2"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="quam"
+               data-component="body">
+    <br>
+<p>Example: <code>quam</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="subscription.customer_attributes.address"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="odio"
+               data-component="body">
+    <br>
+<p>Example: <code>odio</code></p>
+                    </div>
+                                    </details>
+        </div>
+                                                                    <div style=" margin-left: 14px; clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>credit_card_attributes</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+ &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="subscription.credit_card_attributes.last_name"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="qui"
+               data-component="body">
+    <br>
+<p>Example: <code>qui</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>first_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="subscription.credit_card_attributes.first_name"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="est"
+               data-component="body">
+    <br>
+<p>Example: <code>est</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>full_number</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="subscription.credit_card_attributes.full_number"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="11"
+               data-component="body">
+    <br>
+<p>Example: <code>11</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>expiration_year</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="subscription.credit_card_attributes.expiration_year"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="14"
+               data-component="body">
+    <br>
+<p>Example: <code>14</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>expiration_month</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="subscription.credit_card_attributes.expiration_month"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="8"
+               data-component="body">
+    <br>
+<p>Example: <code>8</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>card_type</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="subscription.credit_card_attributes.card_type"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="fuga"
+               data-component="body">
+    <br>
+<p>Example: <code>fuga</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>billing_zip</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="subscription.credit_card_attributes.billing_zip"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="18"
+               data-component="body">
+    <br>
+<p>Example: <code>18</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>billing_state</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="subscription.credit_card_attributes.billing_state"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="corrupti"
+               data-component="body">
+    <br>
+<p>Example: <code>corrupti</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>billing_country</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="subscription.credit_card_attributes.billing_country"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="ullam"
+               data-component="body">
+    <br>
+<p>Example: <code>ullam</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>billing_city</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="subscription.credit_card_attributes.billing_city"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="ut"
+               data-component="body">
+    <br>
+<p>Example: <code>ut</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>billing_address_2</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="subscription.credit_card_attributes.billing_address_2"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="exercitationem"
+               data-component="body">
+    <br>
+<p>Example: <code>exercitationem</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>billing_address</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="subscription.credit_card_attributes.billing_address"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="ut"
+               data-component="body">
+    <br>
+<p>Example: <code>ut</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>cvv</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="subscription.credit_card_attributes.cvv"                data-endpoint="POSTapi-maxio-subscriptions"
+               value="7"
+               data-component="body">
+    <br>
+<p>Example: <code>7</code></p>
+                    </div>
+                                    </details>
+        </div>
+                                        </details>
+        </div>
+        </form>
+
+                    <h2 id="subscriptions-POSTapi-maxio-subscriptions--id-">Update Subscription</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-maxio-subscriptions--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://maxio-api.local/api/maxio/subscriptions/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"subscription\": {
+        \"credit_card_attributes\": {
+            \"full_number\": 11,
+            \"expiration_month\": 20,
+            \"expiration_year\": 3,
+            \"cvv\": 1
+        },
+        \"next_billing_at\": \"2023-10-11T08:36:19\"
+    }
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://maxio-api.local/api/maxio/subscriptions/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "subscription": {
+        "credit_card_attributes": {
+            "full_number": 11,
+            "expiration_month": 20,
+            "expiration_year": 3,
+            "cvv": 1
+        },
+        "next_billing_at": "2023-10-11T08:36:19"
+    }
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-maxio-subscriptions--id-">
+</span>
+<span id="execution-results-POSTapi-maxio-subscriptions--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-maxio-subscriptions--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-maxio-subscriptions--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-maxio-subscriptions--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-maxio-subscriptions--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-maxio-subscriptions--id-" data-method="POST"
+      data-path="api/maxio/subscriptions/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-maxio-subscriptions--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-maxio-subscriptions--id-"
+                    onclick="tryItOut('POSTapi-maxio-subscriptions--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-maxio-subscriptions--id-"
+                    onclick="cancelTryOut('POSTapi-maxio-subscriptions--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-maxio-subscriptions--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/maxio/subscriptions/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-maxio-subscriptions--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-maxio-subscriptions--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="POSTapi-maxio-subscriptions--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>. Example: <code>1</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>subscription</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+ &nbsp;
+<br>
+
+            </summary>
+                                                <div style=" margin-left: 14px; clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>credit_card_attributes</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+ &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>full_number</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="subscription.credit_card_attributes.full_number"                data-endpoint="POSTapi-maxio-subscriptions--id-"
+               value="11"
+               data-component="body">
+    <br>
+<p>Example: <code>11</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>expiration_month</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="subscription.credit_card_attributes.expiration_month"                data-endpoint="POSTapi-maxio-subscriptions--id-"
+               value="20"
+               data-component="body">
+    <br>
+<p>Example: <code>20</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>expiration_year</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="subscription.credit_card_attributes.expiration_year"                data-endpoint="POSTapi-maxio-subscriptions--id-"
+               value="3"
+               data-component="body">
+    <br>
+<p>Example: <code>3</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>cvv</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="subscription.credit_card_attributes.cvv"                data-endpoint="POSTapi-maxio-subscriptions--id-"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+                    </div>
+                                    </details>
+        </div>
+                                                                    <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>next_billing_at</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="subscription.next_billing_at"                data-endpoint="POSTapi-maxio-subscriptions--id-"
+               value="2023-10-11T08:36:19"
+               data-component="body">
+    <br>
+<p>Must be a valid date. Example: <code>2023-10-11T08:36:19</code></p>
+                    </div>
+                                    </details>
+        </div>
+        </form>
+
+            
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                                                        <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                                        <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                            </div>
+            </div>
+</div>
+</body>
+</html>
